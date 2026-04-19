@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>フキハラ 読者の体験談 | Life Reset</title>
+<meta name="description" content="職場・家庭・パートナーからフキハラを受けた方々のリアルな体験談。あなたの状況を客観視するヒントにしてください。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f9f7f4;--surface:#fff;--surface2:#f2efea;--text:#111110;--text-2:#3d3b38;--text-3:#7a7570;--border:#ddd9d2;--shadow:rgba(20,18,15,0.07);--teal:#2e7068;--teal-pale:#e4f0ee;--amber:#7a5518;--amber-pale:#f5edd8;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column;font-size:15px;line-height:1.8;}
+header{padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:50;}
+.logo{font-family:'IM Fell English',serif;font-size:1.3rem;color:#111110;text-decoration:none;letter-spacing:0.02em;}
+.header-nav{display:flex;gap:28px;}
+.header-nav a{font-size:0.8rem;color:var(--text-3);text-decoration:none;letter-spacing:0.04em;transition:color .2s;}
+.header-nav a:hover{color:var(--text);}
+.breadcrumb{padding:12px 32px;font-size:0.73rem;color:var(--text-3);display:flex;align-items:center;gap:6px;border-bottom:1px solid var(--border);background:var(--surface2);flex-wrap:wrap;}
+.breadcrumb a{color:var(--text-3);text-decoration:none;transition:color .2s;}
+.breadcrumb a:hover{color:var(--text);}
+.breadcrumb .sep{opacity:0.4;}
+
+.layout{flex:1;max-width:1060px;margin:0 auto;padding:52px 32px 80px;display:grid;grid-template-columns:1fr 260px;gap:56px;align-items:start;width:100%;}
+
+.article-hero{margin-bottom:36px;animation:fadeUp .5s ease both;}
+.article-cat{display:inline-flex;align-items:center;gap:6px;background:var(--teal-pale);color:var(--teal);font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:16px;}
+.article-title{font-family:'Noto Serif JP',serif;font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;line-height:1.45;letter-spacing:0.03em;color:var(--text);margin-bottom:14px;}
+.article-meta{display:flex;align-items:center;gap:18px;font-size:0.73rem;color:var(--text-3);padding-bottom:22px;border-bottom:1px solid var(--border);flex-wrap:wrap;}
+
+.lead{font-family:'Noto Serif JP',serif;font-size:1rem;line-height:2.1;color:var(--text-2);margin:28px 0 36px;padding:22px 26px;background:var(--surface);border-left:3px solid var(--teal);border-radius:0 10px 10px 0;}
+
+/* SCENE LABEL */
+.scene-label{font-family:'Noto Serif JP',serif;font-size:1.05rem;font-weight:700;color:var(--text);margin:44px 0 18px;padding-bottom:10px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;}
+
+/* STORY CARD */
+.story-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px 28px 24px;margin-bottom:16px;position:relative;transition:border-color .2s;}
+.story-card:hover{border-color:#c8c0b4;}
+.story-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px;}
+.story-persona{display:flex;align-items:center;gap:12px;}
+.story-avatar{width:42px;height:42px;border-radius:50%;background:var(--surface2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.story-who{font-size:0.78rem;font-weight:600;color:var(--text);}
+.story-sub{font-size:0.72rem;color:var(--text-3);margin-top:2px;}
+.story-tag{font-size:0.64rem;font-weight:600;letter-spacing:0.08em;padding:3px 10px;border-radius:100px;background:var(--teal-pale);color:var(--teal);white-space:nowrap;}
+.story-body p{font-size:0.87rem;color:var(--text-2);line-height:2.05;margin-bottom:12px;}
+.story-body p:last-child{margin-bottom:0;}
+.story-body strong{font-weight:600;color:var(--text);}
+.story-divider{border:none;border-top:1px solid var(--border);margin:20px 0;}
+.story-turning{font-size:0.82rem;color:var(--teal);font-weight:500;line-height:1.8;padding:14px 18px;background:var(--teal-pale);border-radius:8px;margin-top:16px;}
+.story-turning::before{content:"💡 ";font-size:0.85rem;}
+
+.highlight{background:var(--teal-pale);border-radius:11px;padding:18px 22px;margin:28px 0;font-size:0.84rem;color:#1e5a54;line-height:1.9;}
+.highlight strong{color:#14403c;}
+
+.notice-box{background:var(--surface2);border:1px solid var(--border);border-radius:11px;padding:18px 22px;margin:28px 0;font-size:0.82rem;color:var(--text-3);line-height:1.9;}
+.notice-box strong{color:var(--text-2);}
+
+.aff-block{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 22px 20px;margin:32px 0;display:flex;gap:16px;align-items:flex-start;text-decoration:none;color:inherit;transition:all .2s;box-shadow:0 2px 8px var(--shadow);}
+.aff-block:hover{border-color:var(--amber);box-shadow:0 6px 22px var(--shadow);transform:translateY(-2px);}
+.aff-thumb{width:60px;height:60px;border-radius:12px;background:var(--amber-pale);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;}
+.aff-tag{font-size:0.67rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:4px;}
+.aff-title{font-family:'Noto Serif JP',serif;font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.5;}
+.aff-desc{font-size:0.75rem;color:var(--text-3);line-height:1.7;margin-bottom:10px;}
+.aff-cta{display:inline-block;background:var(--text);color:#fff;font-size:0.73rem;font-weight:500;padding:6px 16px;border-radius:100px;}
+
+.sidebar{position:sticky;top:80px;display:flex;flex-direction:column;gap:18px;}
+.sidebar-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px 18px;box-shadow:0 2px 8px var(--shadow);}
+.sidebar-card h3{font-family:'Noto Serif JP',serif;font-size:0.83rem;font-weight:600;color:var(--text);margin-bottom:13px;padding-bottom:9px;border-bottom:1px solid var(--border);}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:1px;}
+.toc-list li a{font-size:0.77rem;color:var(--text-3);text-decoration:none;display:block;padding:6px 4px;border-radius:5px;transition:color .2s;line-height:1.5;}
+.toc-list li a:hover{color:var(--teal);}
+.nav-back{display:flex;align-items:center;gap:7px;font-size:0.78rem;color:var(--text-3);text-decoration:none;padding:10px 0;transition:color .2s;}
+.nav-back:hover{color:var(--teal);}
+.related-list{display:flex;flex-direction:column;gap:12px;}
+.related-item{display:flex;gap:10px;text-decoration:none;color:inherit;align-items:flex-start;}
+.related-thumb{width:42px;height:42px;border-radius:8px;background:var(--teal-pale);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.related-title{font-size:0.76rem;color:var(--text-2);line-height:1.6;transition:color .2s;}
+.related-item:hover .related-title{color:var(--teal);}
+
+footer{padding:22px 32px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:auto;}
+.footer-copy{font-family:'IM Fell English',serif;font-size:0.75rem;color:var(--text-3);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{font-size:0.72rem;color:var(--text-3);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:var(--text);}
+.footer-disclaimer{width:100%;font-size:0.67rem;color:#b5afa8;line-height:1.8;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+.fi{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s;}
+.fi.v{opacity:1;transform:none;}
+@media(max-width:860px){.layout{grid-template-columns:1fr;}.sidebar{display:none;}.header-nav{display:none;}header,footer,.breadcrumb{padding-left:20px;padding-right:20px;}.layout{padding:36px 20px 60px;}}
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo">Life Reset</a>
+  <nav class="header-nav">
+    <a href="index.html">ホーム</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="about.html">運営者情報</a>
+  </nav>
+</header>
+<div class="breadcrumb">
+  <a href="index.html">ホーム</a><span class="sep">›</span>
+  <a href="fukihara.html">不機嫌ハラスメント</a><span class="sep">›</span>
+  <span>読者の体験談</span>
+</div>
+
+<div class="layout">
+<article>
+  <div class="article-hero">
+    <div class="article-cat">🗣️ 体験談</div>
+    <h1 class="article-title">読者の体験談——職場・家庭・パートナーからのフキハラ</h1>
+    <div class="article-meta">
+      <span>📅 2026年4月1日</span>
+      <span>🔄 2026年4月20日更新</span>
+    </div>
+  </div>
+
+  <div class="lead fi">
+    「私だけじゃないかもしれない」——そう感じてもらえることが、回復の第一歩になることがあります。実際にフキハラを経験した方々の声を、許可のもと掲載しています。
+  </div>
+
+  <div class="notice-box fi">
+    <strong>掲載について：</strong>掲載している体験談はすべて投稿者の許可を得ており、プライバシー保護のために一部表現を変更しています。特定の個人・企業を指すものではありません。
+  </div>
+
+  <!-- 職場編 -->
+  <div class="scene-label fi">🏢 職場でのフキハラ</div>
+
+  <div class="story-card fi">
+    <div class="story-header">
+      <div class="story-persona">
+        <div class="story-avatar">👩</div>
+        <div>
+          <div class="story-who">30代女性・会社員</div>
+          <div class="story-sub">上司からのフキハラ / 約2年間</div>
+        </div>
+      </div>
+      <div class="story-tag">職場 / 上司</div>
+    </div>
+    <div class="story-body">
+      <p>部長が機嫌の悪い日は、朝から全員がわかるんです。椅子を引く音、マウスを置く音、全部が普段の3倍くらい大きくなる。「おはようございます」と声をかけても無視か、鼻から息を吐くだけ。</p>
+      <p>最初は「忙しいのかな」と思っていたんですが、<strong>毎週月曜日は必ずそれが来る</strong>とわかってから、日曜の夜から胃が痛くなるようになりました。自分が何か失敗したわけじゃないのに、「今日は何をしたら怒らせないか」ばかり考えていました。</p>
+      <p>同僚に話すと「あー、うちの部長ね」とすんなり通じて。みんなわかってたんです。でもそれが「普通」だと思っていたから、誰も声を上げなかった。</p>
+      <div class="story-turning">このサイトで「フキハラ」という言葉を知って、初めて「これはおかしかったんだ」と思えました。今は別の部署に異動して、あの頃の自分に戻れています。</div>
+    </div>
+  </div>
+
+  <div class="story-card fi">
+    <div class="story-header">
+      <div class="story-persona">
+        <div class="story-avatar">👨</div>
+        <div>
+          <div class="story-who">20代男性・営業職</div>
+          <div class="story-sub">先輩からのフキハラ / 1年半</div>
+        </div>
+      </div>
+      <div class="story-tag">職場 / 先輩</div>
+    </div>
+    <div class="story-body">
+      <p>入社して配属された部署の先輩が、気に食わないことがあると一切口をきかなくなる人でした。理由を聞いても「別に」とだけ言って、翌日からまた普通に話しかけてくる。</p>
+      <p>営業の仕事で情報共有が必要なのに、<strong>機嫌が悪い日だけ連絡が回ってこない</strong>。ミスをして怒られるのは理解できるんですが、ため息と舌打ちで「お前のせいで俺は苦労してる」と伝えられるのが一番きつかった。言葉がないから、言い返せない。</p>
+      <div class="story-turning">半年後に上司に相談したとき「そんなつもりはなかったと言っていた」と言われました。でも変わらなかった。結局転職しましたが、転職先で初めて「仕事って楽しいかもしれない」と感じられました。</div>
+    </div>
+  </div>
+
+  <!-- 家庭編 -->
+  <div class="scene-label fi">🏠 家庭・パートナーからのフキハラ</div>
+
+  <div class="story-card fi">
+    <div class="story-header">
+      <div class="story-persona">
+        <div class="story-avatar">👩</div>
+        <div>
+          <div class="story-who">40代女性・パート</div>
+          <div class="story-sub">夫からのフキハラ / 10年以上</div>
+        </div>
+      </div>
+      <div class="story-tag">家庭 / 夫婦</div>
+    </div>
+    <div class="story-body">
+      <p>夫が不機嫌になると、家中の空気が変わります。リモコンを叩きつけるように置く、冷蔵庫を強く閉める、私や子どもが話しかけても聞こえないふりをする。</p>
+      <p>10年以上そういう夫を見てきて、<strong>子どもたちもいつの間にかパパの顔色を読むのが上手くなっていた</strong>。それを見たとき、「あ、これは伝染してるんだ」とゾッとしました。</p>
+      <p>私自身は「機嫌が悪いのは私のせい」とずっと思っていたんですが、カウンセラーに「あなたの責任ではない」と言われて初めて泣きました。</p>
+      <div class="story-turning">今は夫婦カウンセリングを続けています。夫も少しずつ「自分がやっていたことに気づいていなかった」と言うようになりました。変化はゆっくりですが、家の空気は確かに変わってきています。</div>
+    </div>
+  </div>
+
+  <div class="story-card fi">
+    <div class="story-header">
+      <div class="story-persona">
+        <div class="story-avatar">🧑</div>
+        <div>
+          <div class="story-who">20代・学生（当時）</div>
+          <div class="story-sub">交際相手からのフキハラ / 2年間</div>
+        </div>
+      </div>
+      <div class="story-tag">パートナー</div>
+    </div>
+    <div class="story-body">
+      <p>彼女と出かけると、ちょっとしたことで急に無口になる。「どうしたの？」と聞いても「なんでもない」。でも明らかに怒っていて、食事中もずっと下を向いてスマホをいじっている。</p>
+      <p>最初は「自分が何か悪いことをしたのかな」と考えて、謝ったり、気を使ったりしていました。<strong>でもそれをするたびに、相手の不機嫌が「効果ある手段」として強化されている</strong>ことに後から気づきました。</p>
+      <div class="story-turning">別れた後、友人に話したら「それフキハラだよ」と教えてくれました。言葉を知ることで「あれは恋愛じゃなかったんだ」と整理できました。今は対等に話せるパートナーと穏やかに過ごしています。</div>
+    </div>
+  </div>
+
+  <!-- 親から子 -->
+  <div class="scene-label fi">👨‍👩‍👧 親からのフキハラ（子ども時代の記憶）</div>
+
+  <div class="story-card fi">
+    <div class="story-header">
+      <div class="story-persona">
+        <div class="story-avatar">👨</div>
+        <div>
+          <div class="story-who">30代男性・会社員</div>
+          <div class="story-sub">父親からのフキハラ（幼少期〜20代）</div>
+        </div>
+      </div>
+      <div class="story-tag">家庭 / 親子</div>
+    </div>
+    <div class="story-body">
+      <p>父親は言葉で怒ることはほとんどなかったんですが、機嫌が悪いとわかった瞬間から家族全員が動きを止める感じがありました。食卓でのため息、新聞をめくる音の強さ、食器の置き方。全部がサインでした。</p>
+      <p>大人になってから気づいたんですが、<strong>私は今でも誰かの機嫌が少し変わるだけで体が緊張する</strong>。会議室で上司が黙っているだけで冷や汗が出る。これが幼少期からの刷り込みだとわかったのは、30代になってからです。</p>
+      <div class="story-turning">カウンセリングで「あなたは生き延びるために感情を読む力を磨いた。それは賢さだった」と言われました。過去は変えられないけれど、反応のパターンは変えられると知って、少し楽になりました。</div>
+    </div>
+  </div>
+
+  <div class="highlight fi">
+    あなたの体験談も、誰かの助けになるかもしれません。体験談の投稿は<a href="contact.html" style="color:var(--teal);font-weight:600;">お問い合わせフォーム</a>から受け付けています（匿名・掲載可否を選択できます）。
+  </div>
+
+  <a href="fukihara-check-victim.html" class="aff-block fi">
+    <div class="aff-thumb">🩺</div>
+    <div class="aff-info">
+      <div class="aff-tag">次のステップ</div>
+      <div class="aff-title">「私もフキハラを受けているかも」と感じたら — チェックリストで確認</div>
+      <div class="aff-desc">7つの質問で、あなたの状況を客観的に確認できます。</div>
+      <div class="aff-cta">診断する →</div>
+    </div>
+  </a>
+
+</article>
+
+<aside class="sidebar">
+  <a href="fukihara.html" class="nav-back sidebar-card">← フキハラ トップに戻る</a>
+  <div class="sidebar-card">
+    <h3>📋 体験談のカテゴリ</h3>
+    <ul class="toc-list">
+      <li><a href="#">職場でのフキハラ</a></li>
+      <li><a href="#">家庭・パートナー</a></li>
+      <li><a href="#">親からのフキハラ</a></li>
+    </ul>
+  </div>
+  <div class="sidebar-card">
+    <h3>📄 関連コンテンツ</h3>
+    <div class="related-list">
+      <a href="fukihara-what.html" class="related-item">
+        <div class="related-thumb">📖</div>
+        <div class="related-title">フキハラとは？</div>
+      </a>
+      <a href="fukihara-check-victim.html" class="related-item">
+        <div class="related-thumb">🩺</div>
+        <div class="related-title">チェックリスト — されている側</div>
+      </a>
+      <a href="fukihara-howto.html" class="related-item">
+        <div class="related-thumb">🛡️</div>
+        <div class="related-title">対処法・訴える</div>
+      </a>
+    </div>
+  </div>
+</aside>
+</div>
+
+<footer>
+  <div class="footer-copy">© 2026 Life Reset</div>
+  <div class="footer-links">
+    <a href="index.html">ホーム</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="about.html">運営者情報</a>
+  </div>
+  <div class="footer-disclaimer">※掲載している体験談は投稿者の許可を得ており、プライバシー保護のため一部表現を変更しています。本サイトの情報は医療・法律上のアドバイスではありません。</div>
+</footer>
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');obs.unobserve(x.target);}}),{threshold:0.08,rootMargin:'0px 0px -28px 0px'});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
