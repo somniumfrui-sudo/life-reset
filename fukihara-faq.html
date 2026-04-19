@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>フキハラ よくある質問（FAQ） | Life Reset</title>
+<meta name="description" content="フキハラとモラハラの違いは？職場でフキハラは違法？相手が直るの？よく寄せられる疑問にQ&A形式で答えます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f9f7f4;--surface:#fff;--surface2:#f2efea;--text:#111110;--text-2:#3d3b38;--text-3:#7a7570;--border:#ddd9d2;--shadow:rgba(20,18,15,0.07);--teal:#2e7068;--teal-pale:#e4f0ee;--amber:#7a5518;--amber-pale:#f5edd8;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column;font-size:15px;line-height:1.8;}
+header{padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:50;}
+.logo{font-family:'IM Fell English',serif;font-size:1.3rem;color:#111110;text-decoration:none;letter-spacing:0.02em;}
+.header-nav{display:flex;gap:28px;}
+.header-nav a{font-size:0.8rem;color:var(--text-3);text-decoration:none;letter-spacing:0.04em;transition:color .2s;}
+.header-nav a:hover{color:var(--text);}
+.breadcrumb{padding:12px 32px;font-size:0.73rem;color:var(--text-3);display:flex;align-items:center;gap:6px;border-bottom:1px solid var(--border);background:var(--surface2);flex-wrap:wrap;}
+.breadcrumb a{color:var(--text-3);text-decoration:none;transition:color .2s;}
+.breadcrumb a:hover{color:var(--text);}
+.breadcrumb .sep{opacity:0.4;}
+
+.layout{flex:1;max-width:1060px;margin:0 auto;padding:52px 32px 80px;display:grid;grid-template-columns:1fr 260px;gap:56px;align-items:start;width:100%;}
+
+.article-hero{margin-bottom:36px;animation:fadeUp .5s ease both;}
+.article-cat{display:inline-flex;align-items:center;gap:6px;background:var(--teal-pale);color:var(--teal);font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:16px;}
+.article-title{font-family:'Noto Serif JP',serif;font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;line-height:1.45;letter-spacing:0.03em;color:var(--text);margin-bottom:14px;}
+.article-meta{display:flex;align-items:center;gap:18px;font-size:0.73rem;color:var(--text-3);padding-bottom:22px;border-bottom:1px solid var(--border);flex-wrap:wrap;}
+
+.lead{font-family:'Noto Serif JP',serif;font-size:1rem;line-height:2.1;color:var(--text-2);margin:28px 0 36px;padding:22px 26px;background:var(--surface);border-left:3px solid var(--teal);border-radius:0 10px 10px 0;}
+
+/* FAQ */
+.faq-section-label{font-family:'Noto Serif JP',serif;font-size:1.05rem;font-weight:700;color:var(--text);margin:44px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;}
+.faq-list{display:flex;flex-direction:column;gap:10px;}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:13px;overflow:hidden;transition:border-color .2s;}
+.faq-item.open{border-color:var(--teal);}
+.faq-q{display:flex;align-items:flex-start;gap:12px;padding:18px 20px;cursor:pointer;user-select:none;}
+.faq-q-icon{width:26px;height:26px;border-radius:50%;background:var(--teal-pale);color:var(--teal);font-weight:700;font-size:0.78rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-family:'IM Fell English',serif;}
+.faq-q-text{font-size:0.9rem;font-weight:600;color:var(--text);line-height:1.55;flex:1;}
+.faq-chevron{flex-shrink:0;font-size:0.75rem;color:var(--text-3);transition:transform .25s;margin-top:3px;}
+.faq-item.open .faq-chevron{transform:rotate(180deg);}
+.faq-a{display:none;padding:0 20px 18px 58px;}
+.faq-item.open .faq-a{display:block;}
+.faq-a p{font-size:0.86rem;color:var(--text-2);line-height:2;margin-bottom:10px;}
+.faq-a p:last-child{margin-bottom:0;}
+.faq-a strong{font-weight:600;color:var(--text);}
+.faq-a a{color:var(--teal);}
+
+.highlight{background:var(--teal-pale);border-radius:11px;padding:18px 22px;margin:22px 0;font-size:0.84rem;color:#1e5a54;line-height:1.9;}
+.highlight strong{color:#14403c;}
+
+.aff-block{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 22px 20px;margin:32px 0;display:flex;gap:16px;align-items:flex-start;text-decoration:none;color:inherit;transition:all .2s;box-shadow:0 2px 8px var(--shadow);}
+.aff-block:hover{border-color:var(--amber);box-shadow:0 6px 22px var(--shadow);transform:translateY(-2px);}
+.aff-thumb{width:60px;height:60px;border-radius:12px;background:var(--amber-pale);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;}
+.aff-tag{font-size:0.67rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:4px;}
+.aff-title{font-family:'Noto Serif JP',serif;font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.5;}
+.aff-desc{font-size:0.75rem;color:var(--text-3);line-height:1.7;margin-bottom:10px;}
+.aff-cta{display:inline-block;background:var(--text);color:#fff;font-size:0.73rem;font-weight:500;padding:6px 16px;border-radius:100px;}
+
+.sidebar{position:sticky;top:80px;display:flex;flex-direction:column;gap:18px;}
+.sidebar-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px 18px;box-shadow:0 2px 8px var(--shadow);}
+.sidebar-card h3{font-family:'Noto Serif JP',serif;font-size:0.83rem;font-weight:600;color:var(--text);margin-bottom:13px;padding-bottom:9px;border-bottom:1px solid var(--border);}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:1px;}
+.toc-list li a{font-size:0.77rem;color:var(--text-3);text-decoration:none;display:block;padding:6px 4px;border-radius:5px;transition:color .2s;line-height:1.5;}
+.toc-list li a:hover{color:var(--teal);}
+.nav-back{display:flex;align-items:center;gap:7px;font-size:0.78rem;color:var(--text-3);text-decoration:none;padding:10px 0;transition:color .2s;}
+.nav-back:hover{color:var(--teal);}
+.related-list{display:flex;flex-direction:column;gap:12px;}
+.related-item{display:flex;gap:10px;text-decoration:none;color:inherit;align-items:flex-start;}
+.related-thumb{width:42px;height:42px;border-radius:8px;background:var(--teal-pale);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.related-title{font-size:0.76rem;color:var(--text-2);line-height:1.6;transition:color .2s;}
+.related-item:hover .related-title{color:var(--teal);}
+
+footer{padding:22px 32px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:auto;}
+.footer-copy{font-family:'IM Fell English',serif;font-size:0.75rem;color:var(--text-3);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{font-size:0.72rem;color:var(--text-3);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:var(--text);}
+.footer-disclaimer{width:100%;font-size:0.67rem;color:#b5afa8;line-height:1.8;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+.fi{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s;}
+.fi.v{opacity:1;transform:none;}
+@media(max-width:860px){.layout{grid-template-columns:1fr;}.sidebar{display:none;}.header-nav{display:none;}header,footer,.breadcrumb{padding-left:20px;padding-right:20px;}.layout{padding:36px 20px 60px;}.faq-a{padding-left:20px;}}
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo">Life Reset</a>
+  <nav class="header-nav">
+    <a href="index.html">ホーム</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="about.html">運営者情報</a>
+  </nav>
+</header>
+<div class="breadcrumb">
+  <a href="index.html">ホーム</a><span class="sep">›</span>
+  <a href="fukihara.html">不機嫌ハラスメント</a><span class="sep">›</span>
+  <span>よくある質問</span>
+</div>
+
+<div class="layout">
+<article>
+  <div class="article-hero">
+    <div class="article-cat">❓ よくある質問</div>
+    <h1 class="article-title">フキハラ よくある質問（FAQ）</h1>
+    <div class="article-meta">
+      <span>📅 2026年4月1日</span>
+      <span>🔄 2026年4月20日更新</span>
+    </div>
+  </div>
+
+  <div class="lead fi">
+    「フキハラってモラハラと同じ？」「訴えることはできる？」「相手は変われる？」——読者からよく寄せられる疑問を、Q&A形式でまとめました。気になる質問をタップして確認してください。
+  </div>
+
+  <!-- セクション1：基本的な疑問 -->
+  <div class="faq-section-label fi">📖 基本的な疑問</div>
+  <div class="faq-list fi">
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggle(this)">
+        <div class="faq-q-icon">Q</div>
+        <div class="faq-q-text">フキハラとモラハラの違いは何ですか？</div>
+        <div class="faq-chevron">▼</div>
+      </div>
+      <div class="faq-a">
+        <p><strong>モラハラ（モラルハラスメント）</strong>は、言葉・態度・行動など多様な手段で相手の精神を支配・傷つける行為の総称です。フキハラはそのなかでも特に「不機嫌な態度・表情・非言語的行動」に特化した概念です。</p>
+        <p>つまり<strong>フキハラはモラハラの一形態</strong>と考えることができます。「無視・ため息・舌打ち」が主な手段であること、言語化されないため証明が難しいことがフキハラの特徴です。</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggle(this)">
+        <div class="faq-q-icon">Q</div>
+        <div class="faq-q-text">機嫌が悪いだけで「ハラスメント」になるのですか？</div>
+        <div class="faq-chevron">▼</div>
+      </div>
+      <div class="faq-a">
+        <p>単に「気分が落ち込んでいる」「その日たまたま元気がない」という状態はフキハラではありません。</p>
+        <p><strong>フキハラと判断されるポイントは「繰り返し・継続性・影響」</strong>です。不機嫌な態度が繰り返され、周囲が恐怖・不安・萎縮を感じ、行動を制限される状況になっている場合にハラスメントと判断できます。</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggle(this)">
+        <div class="faq-q-icon">Q</div>
+        <div class="faq-q-text">フキハラは男性に多いですか？女性に多いですか？</div>
+        <div class="faq-chevron">▼</div>
+      </div>
+      <div class="faq-a">
+        <p>フキハラは性別を問わず起こります。職場では上司から部下・同僚間、家庭ではパートナーや親から子どもなど、<strong>あらゆる関係性で発生</strong>します。</p>
+        <p>ただし認識されやすい場面は状況によって異なるため、「男性に多い」「女性に多い」とは一概に言えません。重要なのは性別ではなく、「その行動が周囲に与えている影響」です。</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- セクション2：法律・職場 -->
+  <div class="faq-section-label fi">⚖️ 法律・職場での対応</div>
+  <div class="faq-list fi">
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggle(this)">
+        <div class="faq-q-icon">Q</div>
+        <div class="faq-q-text">職場のフキハラは法律で禁止されていますか？</div>
+        <div class="faq-chevron">▼</div>
+      </div>
+      <div class="faq-a">
+        <p>2022年4月から中小企業にも適用された<strong>改正労働施策総合推進法（パワハラ防止法）</strong>では、職場における「優越的な関係を背景にした言動で、就業環境を害するもの」が規制対象となっています。</p>
+        <p>フキハラは言葉によるものではないため直接の適用が難しいケースもありますが、「精神的な攻撃・人間関係からの切り離し」に該当するとして認められる可能性があります。まずは<strong>会社の相談窓口・労働局・弁護士</strong>への相談を検討してください。</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggle(this)">
+        <div class="faq-q-icon">Q</div>
+        <div class="faq-q-text">フキハラを証明するにはどうすればいいですか？</div>
+        <div class="faq-chevron">▼</div>
+      </div>
+      <div class="faq-a">
+        <p>フキハラは非言語的な行為が中心のため、証明が難しいのが現実です。有効な手段として以下が挙げられます。</p>
+        <p><strong>・日時・状況・行動の記録：</strong>いつ・どこで・何が起きたかを詳細にメモ。感じた影響（体調・精神状態）も記録する。<br>
+        <strong>・目撃者の確認：</strong>同じ状況を見ていた同僚などがいれば、証言を確保しておく。<br>
+        <strong>・医療記録：</strong>心身に影響が出ている場合は、心療内科等の受診記録も証拠になりえる。</p>
+        <p>詳しくは<a href="fukihara-howto.html">対処法・訴えるページ</a>を参照してください。</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggle(this)">
+        <div class="faq-q-icon">Q</div>
+        <div class="faq-q-text">上司がフキハラをする場合、会社は責任を取りますか？</div>
+        <div class="faq-chevron">▼</div>
+      </div>
+      <div class="faq-a">
+        <p>パワハラ防止法により、企業には<strong>ハラスメント防止のための体制整備義務</strong>があります。会社が適切な対応をとらなかった場合、会社側にも使用者責任（民法715条）が問われる可能性があります。</p>
+        <p>まず社内の人事・コンプライアンス窓口への相談が最初のステップです。社内での解決が難しい場合は、外部機関（労働局・社労士・弁護士）への相談を検討してください。</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- セクション3：人間関係・回復 -->
+  <div class="faq-section-label fi">💬 人間関係・回復について</div>
+  <div class="faq-list fi">
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggle(this)">
+        <div class="faq-q-icon">Q</div>
+        <div class="faq-q-text">フキハラをする人は変われますか？</div>
+        <div class="faq-chevron">▼</div>
+      </div>
+      <div class="faq-a">
+        <p>変われる可能性はあります。ただし<strong>「本人が問題に気づき、変わろうとする意思がある」</strong>ことが前提です。</p>
+        <p>アンガーマネジメントや認知行動療法は、感情表現のパターンを変えるのに有効とされています。ただし「あなたが我慢し続ければ相手が変わる」という期待は、被害者の消耗につながるため避けてください。まずは自分を守ることを優先してください。</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggle(this)">
+        <div class="faq-q-icon">Q</div>
+        <div class="faq-q-text">パートナーがフキハラをしています。離れるべきですか？</div>
+        <div class="faq-chevron">▼</div>
+      </div>
+      <div class="faq-a">
+        <p>「離れるべきかどうか」は状況によって異なり、一概に答えを出すことはできません。ただし、<strong>心身に深刻な影響が出ている場合や、改善の兆しが見られない場合は、距離を取ることが最優先</strong>です。</p>
+        <p>一人で抱え込まず、信頼できる人や専門家に相談することをお勧めします。</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggle(this)">
+        <div class="faq-q-icon">Q</div>
+        <div class="faq-q-text">自分もフキハラをしているかもしれません。どうすれば直せますか？</div>
+        <div class="faq-chevron">▼</div>
+      </div>
+      <div class="faq-a">
+        <p>自分の行動を振り返ることができているのは、とても大切な第一歩です。</p>
+        <p>まずは<a href="fukihara-check-doer.html">「している側」チェックリスト</a>で自己点検してみてください。改善には<strong>アンガーマネジメントの学習・感情日記・カウンセリング</strong>が有効です。詳しくは<a href="fukihara-anger.html">アンガーマネジメントガイド</a>をご覧ください。</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggle(this)">
+        <div class="faq-q-icon">Q</div>
+        <div class="faq-q-text">子どものころ親からフキハラを受けていました。今でも影響がありますか？</div>
+        <div class="faq-chevron">▼</div>
+      </div>
+      <div class="faq-a">
+        <p>幼少期に感情的に不安定な親のもとで育つことは、<strong>「相手の感情を常に読む」習慣（過剰な気遣い）や、自己肯定感の低下</strong>につながることが知られています。これは「ハイパーヴィジランス（過覚醒）」とも呼ばれます。</p>
+        <p>大人になってからも影響が続く場合、カウンセリングや認知行動療法が有効です。一人で解決しようとせず、専門家のサポートを活用してください。</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="highlight fi" style="margin-top:36px;">
+    💡 ここに載っていない質問は<a href="contact.html" style="color:var(--teal);font-weight:600;">お問い合わせフォーム</a>からお送りください。内容を確認し、FAQに追加します。
+  </div>
+
+  <a href="fukihara-what.html" class="aff-block fi">
+    <div class="aff-thumb">📖</div>
+    <div class="aff-info">
+      <div class="aff-tag">基礎知識</div>
+      <div class="aff-title">フキハラとは何か——定義・行動パターン・なぜ問題なのかを読む</div>
+      <div class="aff-desc">フキハラをはじめて知った方・改めて整理したい方はこちらから。</div>
+      <div class="aff-cta">読む →</div>
+    </div>
+  </a>
+
+</article>
+
+<aside class="sidebar">
+  <a href="fukihara.html" class="nav-back sidebar-card">← フキハラ トップに戻る</a>
+  <div class="sidebar-card">
+    <h3>📋 質問カテゴリ</h3>
+    <ul class="toc-list">
+      <li><a href="#">基本的な疑問</a></li>
+      <li><a href="#">法律・職場での対応</a></li>
+      <li><a href="#">人間関係・回復について</a></li>
+    </ul>
+  </div>
+  <div class="sidebar-card">
+    <h3>📄 関連コンテンツ</h3>
+    <div class="related-list">
+      <a href="fukihara-what.html" class="related-item">
+        <div class="related-thumb">📖</div>
+        <div class="related-title">フキハラとは？</div>
+      </a>
+      <a href="fukihara-check-victim.html" class="related-item">
+        <div class="related-thumb">🩺</div>
+        <div class="related-title">チェックリスト — されている側</div>
+      </a>
+      <a href="fukihara-howto.html" class="related-item">
+        <div class="related-thumb">🛡️</div>
+        <div class="related-title">対処法・訴える</div>
+      </a>
+      <a href="fukihara-anger.html" class="related-item">
+        <div class="related-thumb">🧘</div>
+        <div class="related-title">アンガーマネジメント</div>
+      </a>
+    </div>
+  </div>
+</aside>
+</div>
+
+<footer>
+  <div class="footer-copy">© 2026 Life Reset</div>
+  <div class="footer-links">
+    <a href="index.html">ホーム</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="about.html">運営者情報</a>
+  </div>
+  <div class="footer-disclaimer">※本サイトの情報は一般的な情報提供を目的としており、医療・法律上のアドバイスではありません。深刻な悩みについては必ず専門家にご相談ください。一部リンクはアフィリエイトを含みます。</div>
+</footer>
+<script>
+function toggle(el){const item=el.closest('.faq-item');item.classList.toggle('open');}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');obs.unobserve(x.target);}}),{threshold:0.08,rootMargin:'0px 0px -28px 0px'});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
