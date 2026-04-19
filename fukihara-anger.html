@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アンガーマネジメント 怒りをコントロールする実践ガイド | Life Reset</title>
+<meta name="description" content="怒りのメカニズム・6秒ルール・認知行動療法・日常トレーニングまで。フキハラをしてしまう方のための実践的な感情コントロールガイド。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f9f7f4;--surface:#fff;--surface2:#f2efea;--text:#111110;--text-2:#3d3b38;--text-3:#7a7570;--border:#ddd9d2;--shadow:rgba(20,18,15,0.07);--teal:#2e7068;--teal-pale:#e4f0ee;--amber:#7a5518;--amber-pale:#f5edd8;--orange:#8a4820;--orange-pale:#fdf0e4;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column;font-size:15px;line-height:1.8;}
+header{padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:50;}
+.logo{font-family:'IM Fell English',serif;font-size:1.3rem;color:#111110;text-decoration:none;letter-spacing:0.02em;}
+.header-nav{display:flex;gap:28px;}
+.header-nav a{font-size:0.8rem;color:var(--text-3);text-decoration:none;letter-spacing:0.04em;transition:color .2s;}
+.header-nav a:hover{color:var(--text);}
+.breadcrumb{padding:12px 32px;font-size:0.73rem;color:var(--text-3);display:flex;align-items:center;gap:6px;border-bottom:1px solid var(--border);background:var(--surface2);flex-wrap:wrap;}
+.breadcrumb a{color:var(--text-3);text-decoration:none;}
+.breadcrumb a:hover{color:var(--text);}
+.breadcrumb .sep{opacity:0.4;}
+
+.layout{flex:1;max-width:1060px;margin:0 auto;padding:52px 32px 80px;display:grid;grid-template-columns:1fr 260px;gap:56px;align-items:start;width:100%;}
+
+.article-hero{margin-bottom:36px;animation:fadeUp .5s ease both;}
+.article-cat{display:inline-flex;align-items:center;gap:6px;background:var(--orange-pale);color:var(--orange);font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:16px;}
+.article-title{font-family:'Noto Serif JP',serif;font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;line-height:1.45;letter-spacing:0.03em;color:var(--text);margin-bottom:14px;}
+.article-meta{display:flex;align-items:center;gap:18px;font-size:0.73rem;color:var(--text-3);padding-bottom:22px;border-bottom:1px solid var(--border);flex-wrap:wrap;}
+.lead{font-family:'Noto Serif JP',serif;font-size:1rem;line-height:2.1;color:var(--text-2);margin:28px 0 36px;padding:22px 26px;background:var(--surface);border-left:3px solid var(--orange);border-radius:0 10px 10px 0;}
+
+.article-body h2{font-family:'Noto Serif JP',serif;font-size:1.15rem;font-weight:700;color:var(--text);margin:48px 0 16px;padding-bottom:11px;border-bottom:1px solid var(--border);letter-spacing:0.03em;display:flex;align-items:center;gap:9px;}
+.article-body h3{font-family:'Noto Serif JP',serif;font-size:0.98rem;font-weight:600;color:var(--text);margin:28px 0 10px;}
+.article-body p{font-size:0.88rem;color:var(--text-2);line-height:2.1;margin-bottom:14px;}
+.article-body strong{font-weight:600;color:var(--text);}
+.article-body a{color:var(--teal);}
+
+/* ANGER METER */
+.anger-scale{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 24px;margin:20px 0 28px;}
+.anger-scale-title{font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:16px;}
+.scale-track{display:flex;gap:3px;margin-bottom:12px;}
+.scale-seg{flex:1;height:28px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:0.62rem;font-weight:600;color:#fff;}
+.s1{background:#6aac9e;} .s2{background:#82b86a;} .s3{background:#c8b840;}
+.s4{background:#d4883a;} .s5{background:#c84a3a;}
+.scale-labels{display:flex;justify-content:space-between;font-size:0.7rem;color:var(--text-3);}
+.scale-zones{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px;}
+.zone-item{border-radius:8px;padding:10px 12px;font-size:0.75rem;line-height:1.65;}
+.zone-green{background:#f0f8f5;border:1px solid #b8ddd5;color:#1a5048;}
+.zone-yellow{background:#fdf8e4;border:1px solid #e4d880;color:#5a4a08;}
+.zone-red{background:#fdf0ee;border:1px solid #e8b8b0;color:#6a1a1a;}
+.zone-item strong{display:block;margin-bottom:3px;font-size:0.73rem;}
+
+/* 6 SEC */
+.rule-box{background:linear-gradient(135deg,var(--orange-pale),#fff8f2);border:1px solid #e8c09a;border-radius:16px;padding:28px 28px 24px;margin:20px 0 28px;text-align:center;}
+.rule-num{font-family:'IM Fell English',serif;font-size:4rem;color:var(--orange);line-height:1;margin-bottom:4px;}
+.rule-title{font-family:'Noto Serif JP',serif;font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:12px;}
+.rule-desc{font-size:0.85rem;color:var(--text-2);line-height:1.95;max-width:480px;margin:0 auto 16px;}
+.rule-methods{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.rule-method{background:var(--surface);border:1px solid var(--border);border-radius:100px;padding:6px 16px;font-size:0.76rem;color:var(--text-2);}
+
+/* TECHNIQUE CARDS */
+.technique-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 28px;}
+.tec-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 18px 15px;transition:border-color .2s;}
+.tec-card:hover{border-color:var(--orange);}
+.tec-icon{font-size:1.4rem;margin-bottom:8px;}
+.tec-title{font-size:0.85rem;font-weight:600;color:var(--text);margin-bottom:6px;}
+.tec-desc{font-size:0.76rem;color:var(--text-3);line-height:1.8;}
+.tec-how{font-size:0.73rem;color:var(--orange);margin-top:6px;font-weight:500;}
+
+/* DIARY */
+.diary-template{background:#f7f5f0;border:1px solid var(--border);border-radius:12px;padding:20px 22px;margin:16px 0 28px;}
+.diary-template .d-title{font-size:0.8rem;font-weight:600;color:var(--text);margin-bottom:14px;display:flex;align-items:center;gap:6px;}
+.diary-fields{display:flex;flex-direction:column;gap:10px;}
+.d-field{display:flex;flex-direction:column;gap:4px;}
+.d-label{font-size:0.72rem;font-weight:600;color:var(--text-3);letter-spacing:0.06em;}
+.d-line{background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:10px 14px;font-size:0.83rem;color:var(--text-3);font-style:italic;}
+
+.highlight{background:var(--teal-pale);border-radius:11px;padding:18px 22px;margin:22px 0;font-size:0.85rem;color:#1e5a54;line-height:1.9;}
+.highlight strong{color:#14403c;}
+
+.tips-box{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 24px;margin:20px 0;}
+.tips-title{font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:6px;}
+.tips-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.tips-list li{display:flex;align-items:flex-start;gap:10px;font-size:0.84rem;color:var(--text-2);line-height:1.75;}
+.tips-list li::before{content:'→';color:var(--teal);flex-shrink:0;font-weight:600;margin-top:1px;}
+
+/* AFF */
+.aff-block{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 22px 20px;margin:32px 0;display:flex;gap:16px;align-items:flex-start;text-decoration:none;color:inherit;transition:all .2s;box-shadow:0 2px 8px var(--shadow);}
+.aff-block:hover{border-color:var(--amber);box-shadow:0 6px 22px var(--shadow);transform:translateY(-2px);}
+.aff-thumb{width:60px;height:60px;border-radius:12px;background:var(--amber-pale);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;}
+.aff-tag{font-size:0.67rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:4px;}
+.aff-title{font-family:'Noto Serif JP',serif;font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.5;}
+.aff-desc{font-size:0.75rem;color:var(--text-3);line-height:1.7;margin-bottom:10px;}
+.aff-cta{display:inline-block;background:var(--text);color:#fff;font-size:0.73rem;font-weight:500;padding:6px 16px;border-radius:100px;}
+
+.sidebar{position:sticky;top:80px;display:flex;flex-direction:column;gap:18px;}
+.sidebar-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px 18px;box-shadow:0 2px 8px var(--shadow);}
+.sidebar-card h3{font-family:'Noto Serif JP',serif;font-size:0.83rem;font-weight:600;color:var(--text);margin-bottom:13px;padding-bottom:9px;border-bottom:1px solid var(--border);}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:1px;}
+.toc-list li a{font-size:0.77rem;color:var(--text-3);text-decoration:none;display:block;padding:6px 4px;border-radius:5px;transition:color .2s;line-height:1.5;}
+.toc-list li a:hover{color:var(--teal);}
+.nav-back{display:block;font-size:0.78rem;color:var(--text-3);text-decoration:none;padding:10px 0;transition:color .2s;}
+.nav-back:hover{color:var(--teal);}
+.related-list{display:flex;flex-direction:column;gap:12px;}
+.related-item{display:flex;gap:10px;text-decoration:none;color:inherit;align-items:flex-start;}
+.related-thumb{width:42px;height:42px;border-radius:8px;background:var(--teal-pale);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.related-title{font-size:0.76rem;color:var(--text-2);line-height:1.6;transition:color .2s;}
+.related-item:hover .related-title{color:var(--teal);}
+
+footer{padding:22px 32px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:auto;}
+.footer-copy{font-family:'IM Fell English',serif;font-size:0.75rem;color:var(--text-3);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{font-size:0.72rem;color:var(--text-3);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:var(--text);}
+.footer-disclaimer{width:100%;font-size:0.67rem;color:#b5afa8;line-height:1.8;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+.fi{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s;}
+.fi.v{opacity:1;transform:none;}
+@media(max-width:860px){.layout{grid-template-columns:1fr;}.sidebar{display:none;}.header-nav{display:none;}header,footer,.breadcrumb{padding-left:20px;padding-right:20px;}.layout{padding:36px 20px 60px;}.technique-grid{grid-template-columns:1fr;}.scale-zones{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo">Life Reset</a>
+  <nav class="header-nav">
+    <a href="index.html">ホーム</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="about.html">運営者情報</a>
+  </nav>
+</header>
+<div class="breadcrumb">
+  <a href="index.html">ホーム</a><span class="sep">›</span>
+  <a href="fukihara.html">不機嫌ハラスメント</a><span class="sep">›</span>
+  <span>アンガーマネジメント</span>
+</div>
+
+<div class="layout">
+<article>
+  <div class="article-hero">
+    <div class="article-cat">🧘 加害者向け — 感情コントロール</div>
+    <h1 class="article-title">アンガーマネジメント<br>——怒りをコントロールする実践ガイド</h1>
+    <div class="article-meta">
+      <span>📅 2026年4月1日</span>
+      <span>📖 読了目安 約8分</span>
+    </div>
+  </div>
+
+  <div class="lead fi">
+    「またやってしまった」と後悔するパターンを、断ち切りたいですか。怒りは「悪いもの」ではありません。ただ、<strong>扱い方を学んでいないだけ</strong>です。このページでは、今日から使えるアンガーマネジメントの技法を実践的に解説します。
+  </div>
+
+  <div class="article-body">
+
+    <h2 id="mechanism">🧠 怒りのメカニズムを知る</h2>
+    <p>アンガーマネジメントの第一歩は、怒りを「敵」ではなく「信号」として理解することです。</p>
+    <p>怒りは、自分の中にある<strong>「こうあるべき」という価値観や期待が裏切られたとき</strong>に生じる感情です。怒り自体は自然な反応ですが、問題になるのはその<strong>表現の仕方</strong>です。</p>
+
+    <div class="anger-scale fi">
+      <div class="anger-scale-title">怒りの温度計（0〜10スケール）</div>
+      <div class="scale-track">
+        <div class="scale-seg s1">1-2</div>
+        <div class="scale-seg s1">3</div>
+        <div class="scale-seg s2">4</div>
+        <div class="scale-seg s3">5-6</div>
+        <div class="scale-seg s4">7-8</div>
+        <div class="scale-seg s5">9-10</div>
+      </div>
+      <div class="scale-labels"><span>穏やか</span><span>イライラ</span><span>激怒</span></div>
+      <div class="scale-zones">
+        <div class="zone-item zone-green"><strong>🟢 1〜4：対処できる</strong>深呼吸・その場を離れるなど、セルフコントロールが有効な範囲。</div>
+        <div class="zone-item zone-yellow"><strong>🟡 5〜7：要注意</strong>衝動的な行動が出やすい。6秒ルール・タイムアウトが有効。</div>
+        <div class="zone-item zone-red"><strong>🔴 8〜10：危険域</strong>この状態での会話・判断は避ける。その場から離れることが最優先。</div>
+      </div>
+    </div>
+
+    <p>まず自分の「今何度か」を意識できるようになるだけで、衝動的な行動をかなり減らせます。</p>
+
+    <h2 id="six" class="fi">⏱️ 6秒ルール——怒りのピークをやり過ごす</h2>
+    <p>怒りの衝動が最も強くなるのは<strong>発生後の約6秒間</strong>です。この6秒を乗り越えれば、脳が冷静さを取り戻し始めます。</p>
+
+    <div class="rule-box fi">
+      <div class="rule-num">6</div>
+      <div class="rule-title">怒りのピークは6秒で過ぎる</div>
+      <div class="rule-desc">カッとなった瞬間、何もせずに6秒だけ待つ。それだけで、衝動的な行動の多くを防げます。6秒間にできること：</div>
+      <div class="rule-methods">
+        <div class="rule-method">🫁 深呼吸を1回する</div>
+        <div class="rule-method">🔢 心の中で6まで数える</div>
+        <div class="rule-method">💧 水を一口飲む</div>
+        <div class="rule-method">🚶 その場を3歩離れる</div>
+      </div>
+    </div>
+
+    <h2 id="techniques" class="fi">🛠️ 日常で使えるテクニック</h2>
+
+    <div class="technique-grid fi">
+      <div class="tec-card">
+        <div class="tec-icon">🚪</div>
+        <div class="tec-title">タイムアウト</div>
+        <div class="tec-desc">怒りを感じたらその場を物理的に離れる。「少し外の空気を吸ってくる」と一言添えて。</div>
+        <div class="tec-how">目安：10〜20分。落ち着いてから戻る。</div>
+      </div>
+      <div class="tec-card">
+        <div class="tec-icon">📝</div>
+        <div class="tec-title">怒り日記</div>
+        <div class="tec-desc">何に・いつ・なぜ怒ったかを書く。パターンが見え、「また同じだ」と気づけるようになる。</div>
+        <div class="tec-how">寝る前に3分だけ。スマホのメモでOK。</div>
+      </div>
+      <div class="tec-card">
+        <div class="tec-icon">🔄</div>
+        <div class="tec-title">「べき思考」を緩める</div>
+        <div class="tec-desc">「〇〇すべきだ」という固定観念が怒りの根源。「できれば〇〇だといい」に言い換える練習。</div>
+        <div class="tec-how">例：「すぐ返事すべき」→「早めに返事があると助かる」</div>
+      </div>
+      <div class="tec-card">
+        <div class="tec-icon">🎯</div>
+        <div class="tec-title">アサーティブな表現</div>
+        <div class="tec-desc">不満を態度でなく言葉で伝える練習。「私は〇〇と感じた」（Iメッセージ）で伝える。</div>
+        <div class="tec-how">例：「あなたが〜した」→「私は〜と感じた」</div>
+      </div>
+      <div class="tec-card">
+        <div class="tec-icon">🧘</div>
+        <div class="tec-title">マインドフルネス</div>
+        <div class="tec-desc">今この瞬間の感覚に意識を向けることで、感情に飲み込まれにくくなる。</div>
+        <div class="tec-how">1日5分の腹式呼吸から始めるだけでOK。</div>
+      </div>
+      <div class="tec-card">
+        <div class="tec-icon">😴</div>
+        <div class="tec-title">身体ケアを整える</div>
+        <div class="tec-desc">睡眠不足・空腹・疲労は怒りの閾値を大幅に下げる。感情管理は体調管理から始まる。</div>
+        <div class="tec-how">特に睡眠の質が怒りやすさに直結する。</div>
+      </div>
+    </div>
+
+    <h2 id="diary" class="fi">📓 怒り日記のテンプレート</h2>
+    <p>怒りを記録することで、自分のパターンが見えてきます。1週間続けるだけで「いつ・何に」怒りやすいかがわかります。</p>
+
+    <div class="diary-template fi">
+      <div class="d-title">📋 怒り日記フォーマット（1日1エピソード）</div>
+      <div class="diary-fields">
+        <div class="d-field"><div class="d-label">日時・場所</div><div class="d-line">例：4月8日 夕食後、リビング</div></div>
+        <div class="d-field"><div class="d-label">何があったか（事実）</div><div class="d-line">例：パートナーが返事をしなかった</div></div>
+        <div class="d-field"><div class="d-label">怒りの温度（0〜10）</div><div class="d-line">例：7 / 10</div></div>
+        <div class="d-field"><div class="d-label">自分がとった行動</div><div class="d-line">例：ため息をついて別の部屋に行った</div></div>
+        <div class="d-field"><div class="d-label">本当は何を伝えたかった？</div><div class="d-line">例：「疲れているから少し静かにしたかった」と言えばよかった</div></div>
+        <div class="d-field"><div class="d-label">次回どうするか</div><div class="d-line">例：「少し休ませて」と一言伝える</div></div>
+      </div>
+    </div>
+
+    <h2 id="cbt" class="fi">🔬 認知行動療法（CBT）的アプローチ</h2>
+    <p>アンガーマネジメントの背景にある心理療法が認知行動療法（CBT）です。難しく聞こえますが、考え方のクセを少しずつ修正するというシンプルなものです。</p>
+
+    <div class="tips-box fi">
+      <div class="tips-title">💡 CBTの基本ステップ</div>
+      <ul class="tips-list">
+        <li><strong>気づく：</strong>「カッとなった」「また態度に出た」と認識する（これだけでも大きな進歩）</li>
+        <li><strong>止まる：</strong>6秒ルール・タイムアウトで衝動をやり過ごす</li>
+        <li><strong>考える：</strong>「なぜ怒ったのか」「本当に脅威だったか」を客観視する</li>
+        <li><strong>選ぶ：</strong>反射的に行動するのではなく、どう表現するかを選択する</li>
+        <li><strong>記録する：</strong>怒り日記でパターンを把握し、繰り返しを防ぐ</li>
+      </ul>
+    </div>
+
+    <div class="highlight fi">
+      💚 <strong>変化は必ずゆっくりです。</strong>数週間で完全に変わることを期待しないでください。「また失敗した」と感じる日があっても、それは後退ではありません。気づいて記録できている時点で、何もしていなかった以前とは違います。
+    </div>
+
+    <a href="fukihara-books.html" class="aff-block fi">
+      <div class="aff-thumb">📚</div>
+      <div>
+        <div class="aff-tag">おすすめ書籍</div>
+        <div class="aff-title">アンガーマネジメント・感情コントロールに役立つ本</div>
+        <div class="aff-desc">編集部が厳選した、加害者向け・自己改善に役立つ書籍一覧。</div>
+        <div class="aff-cta">一覧を見る →</div>
+      </div>
+    </a>
+
+  </div>
+</article>
+
+<aside class="sidebar">
+  <a href="fukihara.html" class="nav-back sidebar-card">← フキハラ トップに戻る</a>
+  <div class="sidebar-card">
+    <h3>📋 この記事の内容</h3>
+    <ul class="toc-list">
+      <li><a href="#mechanism">怒りのメカニズムを知る</a></li>
+      <li><a href="#six">6秒ルール</a></li>
+      <li><a href="#techniques">日常で使えるテクニック</a></li>
+      <li><a href="#diary">怒り日記のテンプレート</a></li>
+      <li><a href="#cbt">認知行動療法的アプローチ</a></li>
+    </ul>
+  </div>
+  <div class="sidebar-card">
+    <h3>📄 加害者向けコンテンツ</h3>
+    <div class="related-list">
+      <a href="fukihara-script.html" class="related-item">
+        <div class="related-thumb">💬</div>
+        <div class="related-title">謝り方・伝え方スクリプト</div>
+      </a>
+      <a href="fukihara-check-doer.html" class="related-item">
+        <div class="related-thumb">🔍</div>
+        <div class="related-title">チェックリスト — している側</div>
+      </a>
+      <a href="fukihara-books.html" class="related-item">
+        <div class="related-thumb">📚</div>
+        <div class="related-title">おすすめ本</div>
+      </a>
+    </div>
+  </div>
+</aside>
+</div>
+
+<footer>
+  <div class="footer-copy">© 2026 Life Reset</div>
+  <div class="footer-links">
+    <a href="index.html">ホーム</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="about.html">運営者情報</a>
+  </div>
+  <div class="footer-disclaimer">※本サイトの情報は一般的な情報提供を目的としており、医療・法律上のアドバイスではありません。深刻な悩みについては専門家にご相談ください。</div>
+</footer>
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');obs.unobserve(x.target);}}),{threshold:0.06,rootMargin:'0px 0px -28px 0px'});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
