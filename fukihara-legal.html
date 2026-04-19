@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>フキハラ 訴える・法的手段・証拠の残し方 | Life Reset</title>
+<meta name="description" content="フキハラを記録・訴えるための実務ガイド。証拠の集め方・労働局・弁護士・裁判外解決まで具体的な手順を解説します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f9f7f4;--surface:#fff;--surface2:#f2efea;--text:#111110;--text-2:#3d3b38;--text-3:#7a7570;--border:#ddd9d2;--shadow:rgba(20,18,15,0.07);--teal:#2e7068;--teal-pale:#e4f0ee;--amber:#7a5518;--amber-pale:#f5edd8;--red:#8a2828;--red-pale:#fdecea;--navy:#1a3a5a;--navy-pale:#e4eaf5;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column;font-size:15px;line-height:1.8;}
+header{padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:50;}
+.logo{font-family:'IM Fell English',serif;font-size:1.3rem;color:#111110;text-decoration:none;letter-spacing:0.02em;}
+.header-nav{display:flex;gap:28px;}
+.header-nav a{font-size:0.8rem;color:var(--text-3);text-decoration:none;letter-spacing:0.04em;transition:color .2s;}
+.header-nav a:hover{color:var(--text);}
+.breadcrumb{padding:12px 32px;font-size:0.73rem;color:var(--text-3);display:flex;align-items:center;gap:6px;border-bottom:1px solid var(--border);background:var(--surface2);flex-wrap:wrap;}
+.breadcrumb a{color:var(--text-3);text-decoration:none;}
+.breadcrumb a:hover{color:var(--text);}
+.breadcrumb .sep{opacity:0.4;}
+
+.layout{flex:1;max-width:1060px;margin:0 auto;padding:52px 32px 80px;display:grid;grid-template-columns:1fr 260px;gap:56px;align-items:start;width:100%;}
+
+.article-hero{margin-bottom:36px;animation:fadeUp .5s ease both;}
+.article-cat{display:inline-flex;align-items:center;gap:6px;background:var(--navy-pale);color:var(--navy);font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:16px;}
+.article-title{font-family:'Noto Serif JP',serif;font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;line-height:1.45;letter-spacing:0.03em;color:var(--text);margin-bottom:14px;}
+.article-meta{display:flex;align-items:center;gap:18px;font-size:0.73rem;color:var(--text-3);padding-bottom:22px;border-bottom:1px solid var(--border);flex-wrap:wrap;}
+.lead{font-family:'Noto Serif JP',serif;font-size:1rem;line-height:2.1;color:var(--text-2);margin:28px 0 36px;padding:22px 26px;background:var(--surface);border-left:3px solid var(--navy);border-radius:0 10px 10px 0;}
+
+.article-body h2{font-family:'Noto Serif JP',serif;font-size:1.15rem;font-weight:700;color:var(--text);margin:48px 0 16px;padding-bottom:11px;border-bottom:1px solid var(--border);letter-spacing:0.03em;display:flex;align-items:center;gap:9px;}
+.article-body h3{font-family:'Noto Serif JP',serif;font-size:0.98rem;font-weight:600;color:var(--text);margin:28px 0 10px;}
+.article-body p{font-size:0.88rem;color:var(--text-2);line-height:2.1;margin-bottom:14px;}
+.article-body strong{font-weight:600;color:var(--text);}
+.article-body a{color:var(--teal);}
+
+/* EVIDENCE CARDS */
+.evidence-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:20px 0 28px;}
+.ev-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 18px 15px;transition:border-color .2s;}
+.ev-card:hover{border-color:var(--navy);}
+.ev-icon{font-size:1.4rem;margin-bottom:8px;}
+.ev-title{font-size:0.84rem;font-weight:600;color:var(--text);margin-bottom:5px;}
+.ev-desc{font-size:0.75rem;color:var(--text-3);line-height:1.75;}
+.ev-tip{font-size:0.72rem;color:var(--navy);margin-top:6px;font-weight:500;}
+
+/* ROUTE TABLE */
+.route-list{display:flex;flex-direction:column;gap:12px;margin:20px 0 32px;}
+.route-item{background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:20px 22px;display:flex;gap:16px;align-items:flex-start;}
+.route-icon{width:42px;height:42px;border-radius:10px;background:var(--navy-pale);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;margin-top:2px;}
+.route-body{}
+.route-name{font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:4px;}
+.route-desc{font-size:0.8rem;color:var(--text-3);line-height:1.8;}
+.route-desc strong{color:var(--text-2);}
+
+.highlight{background:var(--teal-pale);border-radius:11px;padding:18px 22px;margin:22px 0;font-size:0.85rem;color:#1e5a54;line-height:1.9;}
+.highlight strong{color:#14403c;}
+.warn-box{background:var(--red-pale);border-radius:11px;padding:18px 22px;margin:22px 0;font-size:0.85rem;color:#6a1a1a;line-height:1.9;}
+.warn-box strong{color:var(--red);}
+.tips-box{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 24px;margin:24px 0;}
+.tips-box .tips-title{font-size:0.82rem;font-weight:600;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:6px;}
+.tips-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.tips-list li{display:flex;align-items:flex-start;gap:10px;font-size:0.84rem;color:var(--text-2);line-height:1.75;}
+.tips-list li::before{content:'→';color:var(--teal);flex-shrink:0;font-weight:600;margin-top:1px;}
+
+.next-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 24px;margin:36px 0;display:flex;gap:16px;align-items:flex-start;text-decoration:none;color:inherit;transition:all .2s;box-shadow:0 2px 8px var(--shadow);}
+.next-card:hover{border-color:var(--amber);box-shadow:0 6px 22px var(--shadow);transform:translateY(-2px);}
+.next-thumb{width:60px;height:60px;border-radius:12px;background:var(--amber-pale);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;}
+.next-tag{font-size:0.67rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:4px;}
+.next-title{font-family:'Noto Serif JP',serif;font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.5;}
+.next-desc{font-size:0.75rem;color:var(--text-3);line-height:1.7;margin-bottom:10px;}
+.next-cta{display:inline-block;background:var(--text);color:#fff;font-size:0.73rem;font-weight:500;padding:6px 16px;border-radius:100px;}
+
+.sidebar{position:sticky;top:80px;display:flex;flex-direction:column;gap:18px;}
+.sidebar-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px 18px;box-shadow:0 2px 8px var(--shadow);}
+.sidebar-card h3{font-family:'Noto Serif JP',serif;font-size:0.83rem;font-weight:600;color:var(--text);margin-bottom:13px;padding-bottom:9px;border-bottom:1px solid var(--border);}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:1px;}
+.toc-list li a{font-size:0.77rem;color:var(--text-3);text-decoration:none;display:block;padding:6px 4px;border-radius:5px;transition:color .2s;line-height:1.5;}
+.toc-list li a:hover{color:var(--teal);}
+.nav-back{display:block;font-size:0.78rem;color:var(--text-3);text-decoration:none;padding:10px 0;transition:color .2s;}
+.nav-back:hover{color:var(--teal);}
+.related-list{display:flex;flex-direction:column;gap:12px;}
+.related-item{display:flex;gap:10px;text-decoration:none;color:inherit;align-items:flex-start;}
+.related-thumb{width:42px;height:42px;border-radius:8px;background:var(--teal-pale);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.related-title{font-size:0.76rem;color:var(--text-2);line-height:1.6;transition:color .2s;}
+.related-item:hover .related-title{color:var(--teal);}
+
+footer{padding:22px 32px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:auto;}
+.footer-copy{font-family:'IM Fell English',serif;font-size:0.75rem;color:var(--text-3);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{font-size:0.72rem;color:var(--text-3);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:var(--text);}
+.footer-disclaimer{width:100%;font-size:0.67rem;color:#b5afa8;line-height:1.8;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+.fi{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s;}
+.fi.v{opacity:1;transform:none;}
+@media(max-width:860px){.layout{grid-template-columns:1fr;}.sidebar{display:none;}.header-nav{display:none;}header,footer,.breadcrumb{padding-left:20px;padding-right:20px;}.layout{padding:36px 20px 60px;}.evidence-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo">Life Reset</a>
+  <nav class="header-nav">
+    <a href="index.html">ホーム</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="about.html">運営者情報</a>
+  </nav>
+</header>
+<div class="breadcrumb">
+  <a href="index.html">ホーム</a><span class="sep">›</span>
+  <a href="fukihara.html">不機嫌ハラスメント</a><span class="sep">›</span>
+  <span>訴える・法的手段</span>
+</div>
+
+<div class="layout">
+<article>
+  <div class="article-hero">
+    <div class="article-cat">⚖️ 法的手段</div>
+    <h1 class="article-title">訴える・法的手段——<br>証拠の残し方と相談窓口ガイド</h1>
+    <div class="article-meta">
+      <span>📅 2026年4月1日</span>
+      <span>📖 読了目安 約7分</span>
+    </div>
+  </div>
+
+  <div class="lead fi">
+    このページは<strong>「本気で動こうとしている方」向け</strong>の実務的なガイドです。まず日常の対処法を知りたい方は<a href="fukihara-howto.html">対処法ガイド</a>からご覧ください。証拠の集め方・相談できる機関・法的手段の流れを具体的に解説します。
+  </div>
+
+  <div class="article-body">
+
+    <div class="warn-box fi">
+      <strong>注意：</strong>このページの情報は一般的な情報提供を目的としており、法律上のアドバイスではありません。具体的な手続きについては、必ず弁護士・社会保険労務士などの専門家にご相談ください。
+    </div>
+
+    <h2 id="evidence">📝 証拠の残し方</h2>
+    <p>フキハラは非言語行為が中心のため、証拠を集めることが最大のハードルです。以下の方法を<strong>できるものから今すぐ始めて</strong>ください。</p>
+
+    <div class="evidence-grid fi">
+      <div class="ev-card">
+        <div class="ev-icon">📓</div>
+        <div class="ev-title">日時・状況メモ</div>
+        <div class="ev-desc">いつ・どこで・誰が・どんな行動をとったかを具体的に記録。感じた影響（体調・感情）も添える。</div>
+        <div class="ev-tip">→ スマホのメモアプリに日付入りで残すのが最も簡単</div>
+      </div>
+      <div class="ev-card">
+        <div class="ev-icon">📱</div>
+        <div class="ev-title">動画・音声記録</div>
+        <div class="ev-desc">物音・舌打ち・ため息など、再現性のある行為はスマホで録音・録画。証拠能力が高い。</div>
+        <div class="ev-tip">→ 自分が含まれる会話の録音は原則として違法ではない（日本）</div>
+      </div>
+      <div class="ev-card">
+        <div class="ev-icon">💬</div>
+        <div class="ev-title">メッセージ・メール</div>
+        <div class="ev-desc">態度の変化に関わるSlack・LINE・メールのやり取りはスクリーンショットで保存。削除される前に。</div>
+        <div class="ev-tip">→ 日付・送信者名が写るようにキャプチャする</div>
+      </div>
+      <div class="ev-card">
+        <div class="ev-icon">👥</div>
+        <div class="ev-title">目撃者の確認</div>
+        <div class="ev-desc">同じ状況を見ていた同僚・家族がいれば、「あのとき見ていた？」と確認し、証言を得られるか打診する。</div>
+        <div class="ev-tip">→ 無理に巻き込まず、自然に話せる人に限定する</div>
+      </div>
+      <div class="ev-card">
+        <div class="ev-icon">🏥</div>
+        <div class="ev-title">医療記録</div>
+        <div class="ev-desc">心身への影響が出ている場合、心療内科・精神科の診断書は強力な証拠になる。</div>
+        <div class="ev-tip">→ 「職場・家庭のストレスが原因」と医師に伝えて記録してもらう</div>
+      </div>
+      <div class="ev-card">
+        <div class="ev-icon">📊</div>
+        <div class="ev-title">ログ・トラッカー</div>
+        <div class="ev-desc">発生頻度・パターンを可視化することで、「一時的な気分」ではなく「継続的な問題」として示せる。</div>
+        <div class="ev-tip">→ 当サイトの「不機嫌日記」（準備中）が活用できます</div>
+      </div>
+    </div>
+
+    <div class="tips-box fi">
+      <div class="tips-title">📌 記録の3原則</div>
+      <ul class="tips-list">
+        <li><strong>事実を書く：</strong>「嫌だった」ではなく「4月8日13時、報告時にため息2回・返事なし」のように具体的に</li>
+        <li><strong>継続して書く：</strong>1回の記録より、繰り返しの記録の方が証拠として有効</li>
+        <li><strong>安全な場所に保存：</strong>クラウドやメール転送で、相手が削除できない場所に保管</li>
+      </ul>
+    </div>
+
+    <h2 id="routes" class="fi">🗂️ 相談・申告できる機関</h2>
+    <p>状況に応じて、以下の機関に相談・申告できます。いきなり裁判ではなく、<strong>段階的に使っていくもの</strong>です。</p>
+
+    <div class="route-list fi">
+      <div class="route-item">
+        <div class="route-icon">🏢</div>
+        <div class="route-body">
+          <div class="route-name">社内の相談窓口・人事・コンプライアンス部門</div>
+          <div class="route-desc"><strong>最初のステップ。</strong>まず社内で解決を試みることが、後の手続きでも「手順を踏んだ」証明になります。相談した日時と内容を記録しておきましょう。</div>
+        </div>
+      </div>
+      <div class="route-item">
+        <div class="route-icon">🏛️</div>
+        <div class="route-body">
+          <div class="route-name">総合労働相談コーナー（都道府県労働局）</div>
+          <div class="route-desc">職場のハラスメントについて、<strong>無料・匿名</strong>で相談できる公的機関。全国の労働局・労働基準監督署内に設置。調停（あっせん）の申請もできます。</div>
+        </div>
+      </div>
+      <div class="route-item">
+        <div class="route-icon">👨‍⚖️</div>
+        <div class="route-body">
+          <div class="route-name">社会保険労務士（社労士）</div>
+          <div class="route-desc">労働問題の専門家。弁護士より費用が抑えられる場合が多く、<strong>会社との交渉・書類作成のサポート</strong>を受けられます。</div>
+        </div>
+      </div>
+      <div class="route-item">
+        <div class="route-icon">⚖️</div>
+        <div class="route-body">
+          <div class="route-name">弁護士（法律相談）</div>
+          <div class="route-desc">損害賠償請求・内容証明郵便・裁判など、<strong>法的手段を本格的に進める</strong>場合に必要です。法テラス（日本司法支援センター）を使えば費用を抑えられます。</div>
+        </div>
+      </div>
+      <div class="route-item">
+        <div class="route-icon">🏠</div>
+        <div class="route-body">
+          <div class="route-name">家庭内・パートナーの場合</div>
+          <div class="route-desc">配偶者暴力相談支援センター・女性相談センター・市区町村の相談窓口が利用できます。モラハラとして<strong>離婚調停・DV被害の申告</strong>の対象になる場合もあります。</div>
+        </div>
+      </div>
+    </div>
+
+    <h2 id="process" class="fi">📋 法的手段の流れ（職場の場合）</h2>
+    <p>一般的には以下の順序で進みます。いきなり裁判から始める必要はありません。</p>
+
+    <div class="highlight fi">
+      <strong>社内相談</strong> → <strong>労働局へのあっせん申請</strong> → <strong>社労士・弁護士への相談</strong> → <strong>労働審判（簡易・迅速な裁判外解決）</strong> → <strong>民事訴訟</strong><br><br>
+      多くのケースは「あっせん」か「労働審判」の段階で解決します。裁判まで進むケースは少数です。
+    </div>
+
+    <h3>損害賠償請求の可能性</h3>
+    <p>フキハラが<strong>「不法行為」（民法709条）</strong>に該当すると認められる場合、精神的苦痛に対する慰謝料を請求できる可能性があります。ただし立証の難しさから、医療記録・継続的な記録・目撃者証言が揃っていることが重要です。</p>
+
+    <h2 id="timing" class="fi">⏰ 動くタイミングの判断基準</h2>
+    <p>「まだ大げさかな」と感じていても、以下に当てはまるなら早めに動くことをお勧めします。</p>
+
+    <div class="tips-box fi">
+      <div class="tips-title">🚨 早めに相談・行動すべきサイン</div>
+      <ul class="tips-list">
+        <li>睡眠障害・食欲不振など、身体への影響が続いている</li>
+        <li>医師に「仕事・家庭のストレスが原因」と指摘されたことがある</li>
+        <li>退職・転職・別居を本気で考えるほど追い詰められている</li>
+        <li>社内での解決を試みたが、改善どころか悪化した</li>
+        <li>「このまま続けると壊れる」という感覚がある</li>
+      </ul>
+    </div>
+
+    <a href="fukihara-howto.html" class="next-card fi">
+      <div class="next-thumb">🛡️</div>
+      <div>
+        <div class="next-tag">前のステップ</div>
+        <div class="next-title">まず自分を守る——対処法ガイド</div>
+        <div class="next-desc">距離の取り方・気持ちの整理・日常のセルフケアから始めたい方はこちら。</div>
+        <div class="next-cta">読む →</div>
+      </div>
+    </a>
+
+  </div>
+</article>
+
+<aside class="sidebar">
+  <a href="fukihara.html" class="nav-back sidebar-card">← フキハラ トップに戻る</a>
+  <div class="sidebar-card">
+    <h3>📋 この記事の内容</h3>
+    <ul class="toc-list">
+      <li><a href="#evidence">証拠の残し方</a></li>
+      <li><a href="#routes">相談・申告できる機関</a></li>
+      <li><a href="#process">法的手段の流れ</a></li>
+      <li><a href="#timing">動くタイミングの判断基準</a></li>
+    </ul>
+  </div>
+  <div class="sidebar-card">
+    <h3>📄 関連コンテンツ</h3>
+    <div class="related-list">
+      <a href="fukihara-howto.html" class="related-item">
+        <div class="related-thumb">🛡️</div>
+        <div class="related-title">対処法ガイド（まず自分を守る）</div>
+      </a>
+      <a href="fukihara-check-victim.html" class="related-item">
+        <div class="related-thumb">🩺</div>
+        <div class="related-title">チェックリスト — されている側</div>
+      </a>
+      <a href="fukihara-faq.html" class="related-item">
+        <div class="related-thumb">❓</div>
+        <div class="related-title">よくある質問（法律・職場）</div>
+      </a>
+    </div>
+  </div>
+</aside>
+</div>
+
+<footer>
+  <div class="footer-copy">© 2026 Life Reset</div>
+  <div class="footer-links">
+    <a href="index.html">ホーム</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="about.html">運営者情報</a>
+  </div>
+  <div class="footer-disclaimer">※本サイトの情報は一般的な情報提供を目的としており、法律上のアドバイスではありません。具体的な手続きは必ず専門家にご相談ください。</div>
+</footer>
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');obs.unobserve(x.target);}}),{threshold:0.06,rootMargin:'0px 0px -28px 0px'});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
