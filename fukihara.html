@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>不機嫌ハラスメント（フキハラ） | Life Reset</title>
+<meta name="description" content="フキハラ（不機嫌ハラスメント）について知る・診断する・記録する・対処する。あなたに必要なコンテンツを選んでください。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f9f7f4;
+  --surface: #ffffff;
+  --surface2: #f2efea;
+  --text: #111110;
+  --text-2: #3d3b38;
+  --text-3: #7a7570;
+  --border: #ddd9d2;
+  --shadow: rgba(20,18,15,0.07);
+  --teal: #2e7068;
+  --teal-light: #3d8a80;
+  --teal-pale: #e4f0ee;
+  --amber: #7a5518;
+  --amber-pale: #f5edd8;
+  --red-pale: #fdecea;
+  --red: #8a2828;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── HEADER ── */
+header {
+  padding: 0 32px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.logo { font-family: 'IM Fell English', serif; font-size: 1.3rem; color: #111110; text-decoration: none; letter-spacing: 0.02em; }
+.header-nav { display: flex; gap: 28px; }
+.header-nav a { font-size: 0.8rem; color: var(--text-3); text-decoration: none; letter-spacing: 0.04em; transition: color .2s; }
+.header-nav a:hover, .header-nav a.active { color: var(--text); }
+
+/* ── BREADCRUMB ── */
+.breadcrumb {
+  padding: 12px 32px;
+  font-size: 0.73rem;
+  color: var(--text-3);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface2);
+}
+.breadcrumb a { color: var(--text-3); text-decoration: none; transition: color .2s; }
+.breadcrumb a:hover { color: var(--text); }
+.breadcrumb .sep { opacity: 0.4; }
+
+/* ── PAGE HERO ── */
+.page-hero {
+  padding: 52px 32px 44px;
+  max-width: 1060px;
+  margin: 0 auto;
+  width: 100%;
+  animation: fadeUp .5s ease both;
+}
+.page-hero-cat {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--teal-pale);
+  color: var(--teal);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+.page-hero h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--text);
+  margin-bottom: 12px;
+  line-height: 1.45;
+}
+.page-hero p {
+  font-size: 0.88rem;
+  color: var(--text-3);
+  line-height: 1.9;
+  max-width: 560px;
+}
+
+/* ── GRID ── */
+.card-grid {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 32px 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  animation: fadeUp .6s .1s ease both;
+}
+
+/* ── BASE CARD ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 28px 26px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  transition: all .25s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 2px 12px var(--shadow);
+}
+.card:not(.coming):hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 36px rgba(20,18,15,0.11);
+}
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2.5px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s ease;
+  border-radius: 0 0 20px 20px;
+}
+.card:not(.coming):hover::after { transform: scaleX(1); }
+
+/* accent lines per type */
+.card.type-learn::after   { background: var(--teal); }
+.card.type-check::after   { background: #4a8fc0; }
+.card.type-action::after  { background: #b05030; }
+.card.type-book::after    { background: var(--amber); }
+.card.type-log::after     { background: #6a5aaa; }
+.card.type-support::after { background: #3a8a5a; }
+.card.type-story::after   { background: #8a4a70; }
+.card.type-qa::after      { background: #4a6aaa; }
+
+/* ── COMING SOON ── */
+.card.coming {
+  opacity: 0.5;
+  cursor: default;
+  background: var(--surface2);
+}
+.badge-coming {
+  position: absolute;
+  top: 14px; right: 14px;
+  background: var(--border);
+  color: var(--text-3);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 3px 9px;
+  border-radius: 100px;
+  text-transform: uppercase;
+}
+
+/* ── CARD PARTS ── */
+.card-icon-wrap {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 4px;
+  flex-shrink: 0;
+}
+.bg-teal   { background: var(--teal-pale); }
+.bg-blue   { background: #deeaf5; }
+.bg-red    { background: var(--red-pale); }
+.bg-amber  { background: var(--amber-pale); }
+.bg-purple { background: #ede8f5; }
+.bg-green  { background: #e2f2e8; }
+.bg-pink   { background: #f5e4ef; }
+.bg-indigo { background: #e4e8f5; }
+
+.card-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+}
+.card-desc {
+  font-size: 0.78rem;
+  color: var(--text-3);
+  line-height: 1.85;
+  flex: 1;
+}
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 4px;
+}
+.tag {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  padding: 3px 9px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  color: var(--text-3);
+}
+.card-arrow {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--text-2);
+  margin-top: 4px;
+  transition: gap .2s;
+}
+.card:not(.coming):hover .card-arrow { gap: 10px; }
+.card.coming .card-arrow { color: var(--text-3); }
+
+/* Wide card (spans 2 cols) */
+.card.wide {
+  grid-column: span 2;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+}
+.card.wide .card-icon-wrap { width: 60px; height: 60px; font-size: 1.8rem; flex-shrink: 0; margin-top: 4px; }
+.card.wide .card-body { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.card.wide .card-title { font-size: 1.05rem; }
+
+/* Divider label */
+.grid-section-label {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+.grid-section-label span {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  white-space: nowrap;
+}
+.grid-section-label::before,
+.grid-section-label::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: var(--border);
+  flex: 1;
+}
+.grid-section-label::before { display: none; }
+
+/* ── FOOTER ── */
+footer {
+  padding: 22px 32px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+.footer-copy { font-family: 'IM Fell English', serif; font-size: 0.75rem; color: var(--text-3); letter-spacing: 0.04em; }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { font-size: 0.72rem; color: var(--text-3); text-decoration: none; transition: color .2s; }
+.footer-links a:hover { color: var(--text); }
+.footer-disclaimer { width: 100%; font-size: 0.67rem; color: #b5afa8; line-height: 1.8; }
+
+/* ── ANIMATION ── */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); padding: 0 20px 60px; }
+  .card.wide { grid-column: span 2; }
+}
+@media (max-width: 560px) {
+  .card-grid { grid-template-columns: 1fr; }
+  .card.wide { grid-column: span 1; flex-direction: column; }
+  .header-nav { display: none; }
+  header, footer, .breadcrumb { padding-left: 20px; padding-right: 20px; }
+  .page-hero { padding: 36px 20px 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="index.html" class="logo">Life Reset</a>
+  <nav class="header-nav">
+    <a href="index.html">ホーム</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="about.html">運営者情報</a>
+  </nav>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="index.html">ホーム</a>
+  <span class="sep">›</span>
+  <span>不機嫌ハラスメント</span>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-cat">😶 Fukigen Harassment</div>
+  <h1>不機嫌ハラスメント（フキハラ）</h1>
+  <p>知る・診断する・記録する・対処する。あなたの状況に合ったコンテンツを選んでください。</p>
+</div>
+
+<!-- CARD GRID -->
+<div class="card-grid">
+
+  <!-- ─── セクション1：知る ─── -->
+  <div class="grid-section-label"><span>知る</span></div>
+
+  <!-- 01 フキハラとは -->
+  <a href="fukihara-what.html" class="card type-learn">
+    <div class="card-icon-wrap bg-teal">📖</div>
+    <div class="card-title">不機嫌ハラスメント<br>（フキハラ）とは？</div>
+    <div class="card-desc">定義・具体的な行動パターン・なぜ問題なのかを解説。「フキハラ」という言葉をはじめて知った方はここから。</div>
+    <div class="card-tags">
+      <span class="tag">定義</span>
+      <span class="tag">行動パターン</span>
+      <span class="tag">基礎知識</span>
+    </div>
+    <div class="card-arrow">読む <span>→</span></div>
+  </a>
+
+  <!-- 02 よくある質問 -->
+  <a href="fukihara-faq.html" class="card type-qa">
+    <div class="card-icon-wrap bg-indigo">❓</div>
+    <div class="card-title">よくある質問<br>（FAQ）</div>
+    <div class="card-desc">「フキハラとモラハラの違いは？」「職場でフキハラは違法？」など、読者からよく寄せられる疑問に答えます。</div>
+    <div class="card-tags">
+      <span class="tag">FAQ</span>
+      <span class="tag">違い</span>
+      <span class="tag">法律</span>
+    </div>
+    <div class="card-arrow">読む <span>→</span></div>
+  </a>
+
+  <!-- 03 体験談 -->
+  <a href="fukihara-stories.html" class="card type-story">
+    <div class="card-icon-wrap bg-pink">🗣️</div>
+    <div class="card-title">読者の体験談</div>
+    <div class="card-desc">「夫のため息が怖かった」「上司の無言の圧力で毎日胃が痛かった」——実際の体験談から、あなたの状況を客観視するヒントを。</div>
+    <div class="card-tags">
+      <span class="tag">体験談</span>
+      <span class="tag">職場</span>
+      <span class="tag">家庭</span>
+    </div>
+    <div class="card-arrow">読む <span>→</span></div>
+  </a>
+
+  <!-- ─── セクション2：診断する ─── -->
+  <div class="grid-section-label"><span>診断する</span></div>
+
+  <!-- 04 チェックリスト（被害側） -->
+  <a href="fukihara-check-victim.html" class="card type-check">
+    <div class="card-icon-wrap bg-blue">🩺</div>
+    <div class="card-title">チェックリスト<br>— されている側</div>
+    <div class="card-desc">「もしかして私はフキハラを受けている？」と感じている方へ。7つの質問でフキハラ被害の深刻度を確認できます。</div>
+    <div class="card-tags">
+      <span class="tag">被害チェック</span>
+      <span class="tag">セルフ診断</span>
+    </div>
+    <div class="card-arrow">診断する <span>→</span></div>
+  </a>
+
+  <!-- 05 チェックリスト（加害側） -->
+  <a href="fukihara-check-doer.html" class="card type-check">
+    <div class="card-icon-wrap bg-blue">🔍</div>
+    <div class="card-title">チェックリスト<br>— している側</div>
+    <div class="card-desc">「自分がフキハラをしているかも…」と気になる方へ。自覚なく周囲を傷つけていないか、正直にチェックしてみましょう。</div>
+    <div class="card-tags">
+      <span class="tag">加害チェック</span>
+      <span class="tag">自己点検</span>
+    </div>
+    <div class="card-arrow">診断する <span>→</span></div>
+  </a>
+
+  <!-- ─── セクション3：被害者向け・対処する ─── -->
+  <div class="grid-section-label"><span>被害者向け — 対処・行動する</span></div>
+
+  <!-- 06 対処法（wide） -->
+  <a href="fukihara-howto.html" class="card type-action wide">
+    <div class="card-icon-wrap bg-red">🛡️</div>
+    <div class="card-body">
+      <div class="card-title">対処法・訴える——自分を守るための5ステップ</div>
+      <div class="card-desc">距離の取り方・記録の残し方・相談窓口・法的手段まで。「どうすればいいかわからない」状態から、具体的な一歩を踏み出すためのガイドです。</div>
+      <div class="card-tags">
+        <span class="tag">被害者向け</span>
+        <span class="tag">証拠・記録</span>
+        <span class="tag">相談窓口</span>
+        <span class="tag">法的手段</span>
+      </div>
+      <div class="card-arrow">読む <span>→</span></div>
+    </div>
+  </a>
+
+  <!-- ─── セクション4：加害者向け ─── -->
+  <div class="grid-section-label"><span>加害者向け — 気づく・変わる</span></div>
+
+  <!-- 07 伝え方・謝り方スクリプト -->
+  <a href="fukihara-script.html" class="card type-action">
+    <div class="card-icon-wrap bg-red">💬</div>
+    <div class="card-title">伝え方・謝り方<br>スクリプト</div>
+    <div class="card-desc">「自分がフキハラをしていたかも」と気づいた方へ。謝罪・改善の意思を伝えるセリフ例・メッセージ文例を状況別に紹介。</div>
+    <div class="card-tags">
+      <span class="tag">加害者向け</span>
+      <span class="tag">謝罪文例</span>
+      <span class="tag">関係修復</span>
+    </div>
+    <div class="card-arrow">読む <span>→</span></div>
+  </a>
+
+  <!-- 08 アンガーマネジメント教材（wide） -->
+  <a href="fukihara-anger.html" class="card type-action wide">
+    <div class="card-icon-wrap bg-red">🧘</div>
+    <div class="card-body">
+      <div class="card-title">アンガーマネジメント——怒りをコントロールする実践ガイド</div>
+      <div class="card-desc">「またやってしまった…」と感じている方へ。怒りのメカニズム・衝動を抑える6秒ルール・日常で使えるトレーニング法を、心理学をもとにわかりやすく解説します。</div>
+      <div class="card-tags">
+        <span class="tag">加害者向け</span>
+        <span class="tag">怒り管理</span>
+        <span class="tag">6秒ルール</span>
+        <span class="tag">認知行動療法</span>
+        <span class="tag">トレーニング</span>
+      </div>
+      <div class="card-arrow">読む <span>→</span></div>
+    </div>
+  </a>
+
+  <!-- ─── セクション5：リソース ─── -->
+  <div class="grid-section-label"><span>リソース</span></div>
+
+  <!-- 09 おすすめ本 -->
+  <a href="fukihara-books.html" class="card type-book">
+    <div class="card-icon-wrap bg-amber">📚</div>
+    <div class="card-title">関連のおすすめ本</div>
+    <div class="card-desc">フキハラ・感情コントロール・自己肯定感に関する書籍を編集部が厳選。被害者・加害者・両方に向けた本を紹介します。</div>
+    <div class="card-tags">
+      <span class="tag">書籍</span>
+      <span class="tag">自己啓発</span>
+      <span class="tag">心理学</span>
+    </div>
+    <div class="card-arrow">一覧を見る <span>→</span></div>
+  </a>
+
+  <!-- ─── セクション6：記録する ─── -->
+  <div class="grid-section-label"><span>記録する（準備中）</span></div>
+
+  <!-- 10 不機嫌日記（coming） -->
+  <div class="card type-log coming wide">
+    <div class="badge-coming">近日公開</div>
+    <div class="card-icon-wrap bg-purple">📓</div>
+    <div class="card-body">
+      <div class="card-title">不機嫌日記（ログ・トラッカー）</div>
+      <div class="card-desc">いつ・誰が・どんな行動をとったかを記録するトラッカー。記録することで状況を客観視でき、相談・法的手段の証拠にもなります。</div>
+      <div class="card-tags">
+        <span class="tag">被害者向け</span>
+        <span class="tag">日記</span>
+        <span class="tag">証拠</span>
+      </div>
+      <div class="card-arrow">準備中</div>
+    </div>
+  </div>
+
+  <!-- 11 感情トラッカー（coming） -->
+  <div class="card type-log coming">
+    <div class="badge-coming">近日公開</div>
+    <div class="card-icon-wrap bg-purple">📊</div>
+    <div class="card-title">感情トラッカー</div>
+    <div class="card-desc">毎日の気分・ストレス度を記録し、フキハラの影響を可視化。「いつから辛かったのか」を振り返ることができます。</div>
+    <div class="card-tags">
+      <span class="tag">感情記録</span>
+      <span class="tag">グラフ</span>
+    </div>
+    <div class="card-arrow">準備中</div>
+  </div>
+
+</div><!-- /card-grid -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-copy">© 2025 Life Reset</div>
+  <div class="footer-links">
+    <a href="index.html">ホーム</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="about.html">運営者情報</a>
+  </div>
+  <div class="footer-disclaimer">※本サイトの情報は一般的な情報提供を目的としており、医療・法律上のアドバイスではありません。深刻な悩みについては必ず専門家にご相談ください。一部リンクはアフィリエイトを含みます。</div>
+</footer>
+
+</body>
+</html>
