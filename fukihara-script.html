@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>フキハラ 謝り方・伝え方スクリプト | Life Reset</title>
+<meta name="description" content="フキハラをしていたと気づいた方へ。謝罪・改善の意思を伝えるセリフ例・メッセージ文例を職場・家庭・パートナー別に紹介します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f9f7f4;--surface:#fff;--surface2:#f2efea;--text:#111110;--text-2:#3d3b38;--text-3:#7a7570;--border:#ddd9d2;--shadow:rgba(20,18,15,0.07);--teal:#2e7068;--teal-pale:#e4f0ee;--amber:#7a5518;--amber-pale:#f5edd8;--orange:#8a4820;--orange-pale:#fdf0e4;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column;font-size:15px;line-height:1.8;}
+header{padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:50;}
+.logo{font-family:'IM Fell English',serif;font-size:1.3rem;color:#111110;text-decoration:none;letter-spacing:0.02em;}
+.header-nav{display:flex;gap:28px;}
+.header-nav a{font-size:0.8rem;color:var(--text-3);text-decoration:none;letter-spacing:0.04em;transition:color .2s;}
+.header-nav a:hover{color:var(--text);}
+.breadcrumb{padding:12px 32px;font-size:0.73rem;color:var(--text-3);display:flex;align-items:center;gap:6px;border-bottom:1px solid var(--border);background:var(--surface2);flex-wrap:wrap;}
+.breadcrumb a{color:var(--text-3);text-decoration:none;}
+.breadcrumb a:hover{color:var(--text);}
+.breadcrumb .sep{opacity:0.4;}
+
+.layout{flex:1;max-width:1060px;margin:0 auto;padding:52px 32px 80px;display:grid;grid-template-columns:1fr 260px;gap:56px;align-items:start;width:100%;}
+
+.article-hero{margin-bottom:36px;animation:fadeUp .5s ease both;}
+.article-cat{display:inline-flex;align-items:center;gap:6px;background:var(--orange-pale);color:var(--orange);font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:16px;}
+.article-title{font-family:'Noto Serif JP',serif;font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;line-height:1.45;letter-spacing:0.03em;color:var(--text);margin-bottom:14px;}
+.article-meta{display:flex;align-items:center;gap:18px;font-size:0.73rem;color:var(--text-3);padding-bottom:22px;border-bottom:1px solid var(--border);flex-wrap:wrap;}
+.lead{font-family:'Noto Serif JP',serif;font-size:1rem;line-height:2.1;color:var(--text-2);margin:28px 0 36px;padding:22px 26px;background:var(--surface);border-left:3px solid var(--orange);border-radius:0 10px 10px 0;}
+
+.article-body h2{font-family:'Noto Serif JP',serif;font-size:1.15rem;font-weight:700;color:var(--text);margin:48px 0 16px;padding-bottom:11px;border-bottom:1px solid var(--border);letter-spacing:0.03em;display:flex;align-items:center;gap:9px;}
+.article-body h3{font-family:'Noto Serif JP',serif;font-size:0.98rem;font-weight:600;color:var(--text);margin:28px 0 10px;}
+.article-body p{font-size:0.88rem;color:var(--text-2);line-height:2.1;margin-bottom:14px;}
+.article-body strong{font-weight:600;color:var(--text);}
+.article-body a{color:var(--teal);}
+
+/* BEFORE/AFTER */
+.ba-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0 28px;}
+.ba-box{border-radius:11px;padding:16px 18px;}
+.ba-box.bad{background:#fff5f5;border:1px solid #f0c8c8;}
+.ba-box.good{background:var(--teal-pale);border:1px solid #b0d8d2;}
+.ba-label{font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px;}
+.ba-box.bad .ba-label{color:#8a3030;}
+.ba-box.good .ba-label{color:var(--teal);}
+.ba-text{font-size:0.84rem;line-height:1.85;}
+.ba-box.bad .ba-text{color:#5a2020;}
+.ba-box.good .ba-text{color:#1a4a44;}
+
+/* SCRIPT CARD */
+.scene-label{font-family:'Noto Serif JP',serif;font-size:1.05rem;font-weight:700;color:var(--text);margin:44px 0 18px;padding-bottom:10px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;}
+
+.script-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:16px;transition:border-color .2s;}
+.script-card:hover{border-color:#c8c0b4;}
+.script-header{padding:16px 20px 14px;background:var(--surface2);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
+.script-situation{font-size:0.8rem;font-weight:600;color:var(--text-2);}
+.script-tag{font-size:0.62rem;font-weight:600;letter-spacing:0.08em;padding:3px 9px;border-radius:100px;margin-left:auto;}
+.tag-spoken{background:var(--amber-pale);color:var(--amber);}
+.tag-written{background:#e4eaf5;color:#2a4a7a;}
+.script-body{padding:20px 20px 18px;}
+.script-body p{font-size:0.82rem;color:var(--text-3);line-height:1.7;margin-bottom:12px;}
+
+/* COPY BLOCK */
+.copy-block{background:#f7f5f0;border:1px solid var(--border);border-radius:10px;padding:16px 18px;position:relative;margin-bottom:4px;}
+.copy-block-text{font-size:0.86rem;color:var(--text-2);line-height:1.95;white-space:pre-wrap;}
+.copy-btn{position:absolute;top:10px;right:10px;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:0.68rem;color:var(--text-3);cursor:pointer;font-family:'Noto Sans JP',sans-serif;transition:all .15s;}
+.copy-btn:hover{border-color:var(--text-3);color:var(--text);}
+.copy-btn.copied{background:var(--teal-pale);border-color:var(--teal);color:var(--teal);}
+
+/* POINTS */
+.point-note{font-size:0.76rem;color:var(--text-3);line-height:1.75;padding:10px 14px;background:var(--amber-pale);border-radius:8px;margin-top:8px;}
+.point-note strong{color:var(--amber);}
+
+.highlight{background:var(--teal-pale);border-radius:11px;padding:18px 22px;margin:22px 0;font-size:0.85rem;color:#1e5a54;line-height:1.9;}
+.highlight strong{color:#14403c;}
+.warn-box{background:var(--orange-pale);border-radius:11px;padding:18px 22px;margin:22px 0;font-size:0.85rem;color:#5a2a08;line-height:1.9;}
+.warn-box strong{color:var(--orange);}
+
+.next-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 24px;margin:36px 0;display:flex;gap:16px;align-items:flex-start;text-decoration:none;color:inherit;transition:all .2s;box-shadow:0 2px 8px var(--shadow);}
+.next-card:hover{border-color:var(--amber);box-shadow:0 6px 22px var(--shadow);transform:translateY(-2px);}
+.next-thumb{width:60px;height:60px;border-radius:12px;background:var(--amber-pale);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;}
+.next-tag{font-size:0.67rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:4px;}
+.next-title{font-family:'Noto Serif JP',serif;font-size:0.9rem;font-weight:600;color:var(--text);margin-bottom:5px;line-height:1.5;}
+.next-desc{font-size:0.75rem;color:var(--text-3);line-height:1.7;margin-bottom:10px;}
+.next-cta{display:inline-block;background:var(--text);color:#fff;font-size:0.73rem;font-weight:500;padding:6px 16px;border-radius:100px;}
+
+.sidebar{position:sticky;top:80px;display:flex;flex-direction:column;gap:18px;}
+.sidebar-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px 18px;box-shadow:0 2px 8px var(--shadow);}
+.sidebar-card h3{font-family:'Noto Serif JP',serif;font-size:0.83rem;font-weight:600;color:var(--text);margin-bottom:13px;padding-bottom:9px;border-bottom:1px solid var(--border);}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:1px;}
+.toc-list li a{font-size:0.77rem;color:var(--text-3);text-decoration:none;display:block;padding:6px 4px;border-radius:5px;transition:color .2s;line-height:1.5;}
+.toc-list li a:hover{color:var(--teal);}
+.nav-back{display:block;font-size:0.78rem;color:var(--text-3);text-decoration:none;padding:10px 0;transition:color .2s;}
+.nav-back:hover{color:var(--teal);}
+.related-list{display:flex;flex-direction:column;gap:12px;}
+.related-item{display:flex;gap:10px;text-decoration:none;color:inherit;align-items:flex-start;}
+.related-thumb{width:42px;height:42px;border-radius:8px;background:var(--teal-pale);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.related-title{font-size:0.76rem;color:var(--text-2);line-height:1.6;transition:color .2s;}
+.related-item:hover .related-title{color:var(--teal);}
+
+footer{padding:22px 32px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:auto;}
+.footer-copy{font-family:'IM Fell English',serif;font-size:0.75rem;color:var(--text-3);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{font-size:0.72rem;color:var(--text-3);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:var(--text);}
+.footer-disclaimer{width:100%;font-size:0.67rem;color:#b5afa8;line-height:1.8;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+.fi{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s;}
+.fi.v{opacity:1;transform:none;}
+@media(max-width:860px){.layout{grid-template-columns:1fr;}.sidebar{display:none;}.header-nav{display:none;}header,footer,.breadcrumb{padding-left:20px;padding-right:20px;}.layout{padding:36px 20px 60px;}.ba-pair{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo">Life Reset</a>
+  <nav class="header-nav">
+    <a href="index.html">ホーム</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="about.html">運営者情報</a>
+  </nav>
+</header>
+<div class="breadcrumb">
+  <a href="index.html">ホーム</a><span class="sep">›</span>
+  <a href="fukihara.html">不機嫌ハラスメント</a><span class="sep">›</span>
+  <span>謝り方・伝え方スクリプト</span>
+</div>
+
+<div class="layout">
+<article>
+  <div class="article-hero">
+    <div class="article-cat">💬 加害者向け — 関係修復</div>
+    <h1 class="article-title">謝り方・伝え方スクリプト<br>——フキハラに気づいた後にできること</h1>
+    <div class="article-meta">
+      <span>📅 2026年4月1日</span>
+      <span>📖 読了目安 約6分</span>
+    </div>
+  </div>
+
+  <div class="lead fi">
+    「自分がフキハラをしていたかもしれない」と気づいた。それだけで、あなたはすでに大きな一歩を踏み出しています。このページでは、<strong>謝り方・改善の意思を伝える言葉</strong>を、状況別のスクリプトとして紹介します。そのままコピーして使えます。
+  </div>
+
+  <div class="article-body">
+
+    <h2 id="before">🚫 まず「やってしまいがちな謝り方」を知る</h2>
+    <p>謝る気持ちがあっても、言葉の選び方で逆効果になることがあります。</p>
+
+    <div class="ba-pair fi">
+      <div class="ba-box bad">
+        <div class="ba-label">❌ 逆効果な謝り方</div>
+        <div class="ba-text">「怒らせてしまってごめん」<br>「そういうつもりじゃなかった」<br>「機嫌が悪かっただけで、悪意はない」<br>「でも、あのときは自分も〇〇で…」</div>
+      </div>
+      <div class="ba-box good">
+        <div class="ba-label">✅ 伝わる謝り方</div>
+        <div class="ba-text">「あの態度で怖い思いをさせた」<br>「自分の行動が問題だった」<br>「あなたが感じた不快感は正当だ」<br>「理由に関係なく、傷つけたことは謝りたい」</div>
+      </div>
+    </div>
+
+    <div class="warn-box fi">
+      <strong>ポイント：</strong>「怒らせてしまった」は相手のせい。「傷つけた」は自分の行動への責任。謝罪では<strong>自分の行動を主語にする</strong>ことが大切です。また「でも〇〇で」と続けると謝罪が言い訳になります。理由の説明は謝罪の後、別の機会に。
+    </div>
+
+    <!-- 職場 -->
+    <div class="scene-label fi">🏢 職場・同僚・部下への謝罪</div>
+
+    <div class="script-card fi">
+      <div class="script-header">
+        <div class="script-situation">直接会って謝る — 1対1の場面</div>
+        <div class="script-tag tag-spoken">口頭</div>
+      </div>
+      <div class="script-body">
+        <p>少し時間をとってもらえますか、と声をかけてから始めましょう。</p>
+        <div class="copy-block">
+          <button class="copy-btn" onclick="copyText(this)">コピー</button>
+          <div class="copy-block-text">「少し時間をもらえますか。
+
+最近、自分の態度について反省していることがあって。
+機嫌が悪いとき、ため息をついたり、返事をしなかったりしていたと思います。
+そういう態度で、嫌な思いをさせていたなら、本当に申し訳なかったです。
+
+自分では気づいていない部分も多いかもしれないので、
+もし他にも気になることがあれば、聞かせてもらえると助かります。」</div>
+        </div>
+        <div class="point-note"><strong>ポイント：</strong>「〜させていたなら」ではなく「させていたと思います」と言い切る方が誠実に伝わります。相手に「気になることを話してもいい」という余地を与えるのも大切。</div>
+      </div>
+    </div>
+
+    <div class="script-card fi">
+      <div class="script-header">
+        <div class="script-situation">メッセージで謝る（Slack・メール）</div>
+        <div class="script-tag tag-written">文章</div>
+      </div>
+      <div class="script-body">
+        <p>直接話しにくい場合や、相手が考える時間を持てるよう文章で伝えるのも有効です。</p>
+        <div class="copy-block">
+          <button class="copy-btn" onclick="copyText(this)">コピー</button>
+          <div class="copy-block-text">〇〇さん、少しよいでしょうか。
+
+最近の自分の態度について、お詫びしたいことがあります。
+機嫌が悪いときに、ため息をついたり、返事が短くなっていたと思います。
+そういった態度で不快な思いや、気を遣わせてしまっていたなら、
+本当に申し訳ありませんでした。
+
+今後は気をつけます。
+もし何か気になっていることがあれば、いつでも話しかけてください。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- パートナー・家族 -->
+    <div class="scene-label fi">🏠 パートナー・家族への謝罪</div>
+
+    <div class="script-card fi">
+      <div class="script-header">
+        <div class="script-situation">パートナーへ — 落ち着いた場での会話</div>
+        <div class="script-tag tag-spoken">口頭</div>
+      </div>
+      <div class="script-body">
+        <p>相手が落ち着いているとき、食後や散歩中など、ゆっくり話せる場面を選びましょう。</p>
+        <div class="copy-block">
+          <button class="copy-btn" onclick="copyText(this)">コピー</button>
+          <div class="copy-block-text">「少し話せる？
+
+自分のことなんだけど、不機嫌なときに態度に出してしまっていたと思う。
+無視したり、ため息をついたり、物に当たったりしてたこと。
+それがどれだけ怖かったか、嫌だったか、ちゃんと考えられていなかった。
+
+謝りたかった。本当にごめん。
+
+あなたに安心していてほしいし、家の中が自分のせいで重くなってたなら、
+それを変えたいと思ってる。」</div>
+        </div>
+        <div class="point-note"><strong>ポイント：</strong>「怖かったか」という言葉を入れることで、相手の体験を具体的に認めることができます。「変えたい」という意思を伝えることで、謝罪が終わりではなく始まりになります。</div>
+      </div>
+    </div>
+
+    <div class="script-card fi">
+      <div class="script-header">
+        <div class="script-situation">子どもへ — わかりやすい言葉で</div>
+        <div class="script-tag tag-spoken">口頭</div>
+      </div>
+      <div class="script-body">
+        <p>子どもは言葉より態度の変化に敏感です。シンプルに、正直に伝えましょう。</p>
+        <div class="copy-block">
+          <button class="copy-btn" onclick="copyText(this)">コピー</button>
+          <div class="copy-block-text">「ちょっと話があるんだけど、いい？
+
+最近、パパ（ママ）が機嫌悪そうにしてること、多かったと思う。
+怖かったり、話しかけにくかったりしてたかな。
+それは〇〇のせいじゃないよ。パパ（ママ）がうまくできていなかっただけ。
+
+ごめんね。
+これからは、もっと穏やかにいられるようにするから。」</div>
+        </div>
+        <div class="point-note"><strong>ポイント：</strong>「あなたのせいじゃない」という言葉は必ず入れてください。子どもはフキハラを「自分が悪かったから」と内面化しやすいため、明確に否定することが大切です。</div>
+      </div>
+    </div>
+
+    <!-- 改善の意思を伝える -->
+    <div class="scene-label fi">🌱 改善の意思・今後を伝えるフレーズ</div>
+
+    <div class="script-card fi">
+      <div class="script-header">
+        <div class="script-situation">「どう変わるか」を言葉にする</div>
+        <div class="script-tag tag-spoken">口頭・文章どちらでも</div>
+      </div>
+      <div class="script-body">
+        <p>謝罪だけで終わらず、「どう変わるか」を伝えると相手の安心感が増します。具体的なほど信頼されます。</p>
+        <div class="copy-block">
+          <button class="copy-btn" onclick="copyText(this)">コピー</button>
+          <div class="copy-block-text">「今後、気をつけたいと思っていること。
+
+機嫌が悪くなりそうなとき、その場を少し離れるようにする。
+もし態度に出てしまったら、その日のうちに「さっきはごめん」と言う。
+感情を溜め込まないよう、自分なりの方法を探してみる。
+
+すぐに完璧にはできないかもしれないけど、
+同じことを繰り返したくないと思っている。」</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight fi">
+      💡 <strong>謝罪の後に相手が冷たくても：</strong>長期間フキハラを受けてきた相手は、すぐに信頼を回復できるわけではありません。「謝ったのに」と焦らず、<strong>継続した行動で示す</strong>ことが唯一の方法です。
+    </div>
+
+    <a href="fukihara-anger.html" class="next-card fi">
+      <div class="next-thumb">🧘</div>
+      <div>
+        <div class="next-tag">合わせて読む</div>
+        <div class="next-title">アンガーマネジメント——怒りをコントロールする実践ガイド</div>
+        <div class="next-desc">謝罪の次は、同じことを繰り返さないための習慣づくり。6秒ルールから認知行動療法まで。</div>
+        <div class="next-cta">読む →</div>
+      </div>
+    </a>
+
+  </div>
+</article>
+
+<aside class="sidebar">
+  <a href="fukihara.html" class="nav-back sidebar-card">← フキハラ トップに戻る</a>
+  <div class="sidebar-card">
+    <h3>📋 この記事の内容</h3>
+    <ul class="toc-list">
+      <li><a href="#before">やってしまいがちな謝り方</a></li>
+      <li><a href="#">職場・同僚への謝罪</a></li>
+      <li><a href="#">パートナー・家族への謝罪</a></li>
+      <li><a href="#">改善の意思を伝える</a></li>
+    </ul>
+  </div>
+  <div class="sidebar-card">
+    <h3>📄 加害者向けコンテンツ</h3>
+    <div class="related-list">
+      <a href="fukihara-anger.html" class="related-item">
+        <div class="related-thumb">🧘</div>
+        <div class="related-title">アンガーマネジメント実践ガイド</div>
+      </a>
+      <a href="fukihara-check-doer.html" class="related-item">
+        <div class="related-thumb">🔍</div>
+        <div class="related-title">チェックリスト — している側</div>
+      </a>
+      <a href="fukihara-books.html" class="related-item">
+        <div class="related-thumb">📚</div>
+        <div class="related-title">おすすめ本</div>
+      </a>
+    </div>
+  </div>
+</aside>
+</div>
+
+<footer>
+  <div class="footer-copy">© 2026 Life Reset</div>
+  <div class="footer-links">
+    <a href="index.html">ホーム</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="about.html">運営者情報</a>
+  </div>
+  <div class="footer-disclaimer">※本サイトの情報は一般的な情報提供を目的としており、医療・法律上のアドバイスではありません。</div>
+</footer>
+<script>
+function copyText(btn){
+  const text=btn.nextElementSibling.textContent;
+  navigator.clipboard.writeText(text.trim()).then(()=>{
+    btn.textContent='コピーしました';btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='コピー';btn.classList.remove('copied');},2000);
+  });
+}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');obs.unobserve(x.target);}}),{threshold:0.06,rootMargin:'0px 0px -28px 0px'});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
