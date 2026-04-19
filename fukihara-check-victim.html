@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>フキハラ チェックリスト — されている側 | Life Reset</title>
+<meta name="description" content="あなたはフキハラを受けていますか？15の質問で被害の深刻度を確認。結果に応じた次のステップも紹介します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f9f7f4;--surface:#fff;--surface2:#f2efea;--text:#111110;--text-2:#3d3b38;--text-3:#7a7570;--border:#ddd9d2;--shadow:rgba(20,18,15,0.07);--teal:#2e7068;--teal-pale:#e4f0ee;--amber:#7a5518;--amber-pale:#f5edd8;--red:#8a2828;--red-pale:#fdecea;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column;font-size:15px;line-height:1.8;}
+header{padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:50;}
+.logo{font-family:'IM Fell English',serif;font-size:1.3rem;color:#111110;text-decoration:none;letter-spacing:0.02em;}
+.header-nav{display:flex;gap:28px;}
+.header-nav a{font-size:0.8rem;color:var(--text-3);text-decoration:none;letter-spacing:0.04em;transition:color .2s;}
+.header-nav a:hover{color:var(--text);}
+.breadcrumb{padding:12px 32px;font-size:0.73rem;color:var(--text-3);display:flex;align-items:center;gap:6px;border-bottom:1px solid var(--border);background:var(--surface2);flex-wrap:wrap;}
+.breadcrumb a{color:var(--text-3);text-decoration:none;}
+.breadcrumb a:hover{color:var(--text);}
+.breadcrumb .sep{opacity:0.4;}
+
+/* LAYOUT */
+.layout{flex:1;max-width:1060px;margin:0 auto;padding:52px 32px 80px;display:grid;grid-template-columns:1fr 260px;gap:56px;align-items:start;width:100%;}
+
+/* HERO */
+.article-hero{margin-bottom:36px;animation:fadeUp .5s ease both;}
+.article-cat{display:inline-flex;align-items:center;gap:6px;background:#deeaf5;color:#2a5a8a;font-size:0.7rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:16px;}
+.article-title{font-family:'Noto Serif JP',serif;font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;line-height:1.45;letter-spacing:0.03em;color:var(--text);margin-bottom:14px;}
+.article-meta{display:flex;align-items:center;gap:18px;font-size:0.73rem;color:var(--text-3);padding-bottom:22px;border-bottom:1px solid var(--border);flex-wrap:wrap;}
+.lead{font-family:'Noto Serif JP',serif;font-size:1rem;line-height:2.1;color:var(--text-2);margin:28px 0 36px;padding:22px 26px;background:var(--surface);border-left:3px solid #4a8fc0;border-radius:0 10px 10px 0;}
+
+/* CHECKLIST */
+.check-intro{font-size:0.87rem;color:var(--text-3);line-height:1.9;margin-bottom:24px;}
+.check-intro strong{color:var(--text-2);}
+
+.check-section-label{font-size:0.72rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-3);margin:32px 0 12px;display:flex;align-items:center;gap:8px;}
+.check-section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+
+.check-list{display:flex;flex-direction:column;gap:8px;margin-bottom:8px;}
+.check-item{display:flex;align-items:flex-start;gap:14px;background:var(--surface);border:1.5px solid var(--border);border-radius:11px;padding:14px 16px;cursor:pointer;transition:border-color .2s,background .15s;user-select:none;}
+.check-item:hover{border-color:#9ab8d0;}
+.check-item.checked{border-color:#4a8fc0;background:#f3f8fc;}
+.check-item input[type=checkbox]{width:18px;height:18px;accent-color:#4a8fc0;flex-shrink:0;margin-top:2px;cursor:pointer;}
+.check-item label{font-size:0.87rem;color:var(--text-2);line-height:1.75;cursor:pointer;flex:1;}
+.check-item.checked label{color:var(--text);}
+
+/* PROGRESS */
+.progress-wrap{margin:28px 0 8px;}
+.progress-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.progress-label{font-size:0.78rem;color:var(--text-3);}
+.progress-count{font-family:'IM Fell English',serif;font-size:1.1rem;color:#4a8fc0;font-weight:400;}
+.progress-bar-bg{height:6px;background:var(--surface2);border-radius:100px;overflow:hidden;}
+.progress-bar-fill{height:100%;background:#4a8fc0;border-radius:100px;transition:width .3s ease;}
+
+/* RESULT */
+.result-area{margin-top:32px;display:none;}
+.result-area.show{display:block;}
+.result-card{border-radius:16px;padding:28px 28px 24px;margin-bottom:20px;}
+.result-card.low {background:var(--teal-pale);border:1px solid #b0d8d2;}
+.result-card.mid {background:#fef6e4;border:1px solid #e8d49a;}
+.result-card.high{background:var(--red-pale);border:1px solid #e8b8b4;}
+.result-score{font-family:'IM Fell English',serif;font-size:2.8rem;line-height:1;margin-bottom:6px;}
+.result-card.low  .result-score{color:var(--teal);}
+.result-card.mid  .result-score{color:#8a6820;}
+.result-card.high .result-score{color:var(--red);}
+.result-title{font-family:'Noto Serif JP',serif;font-size:1.1rem;font-weight:700;margin-bottom:10px;}
+.result-card.low  .result-title{color:#1a4a44;}
+.result-card.mid  .result-title{color:#6a4a10;}
+.result-card.high .result-title{color:#6a1a1a;}
+.result-desc{font-size:0.86rem;line-height:1.95;margin-bottom:16px;}
+.result-card.low  .result-desc{color:#1e5a54;}
+.result-card.mid  .result-desc{color:#5a3a08;}
+.result-card.high .result-desc{color:#6a1a1a;}
+.result-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px;}
+.result-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:100px;font-size:0.8rem;font-weight:600;text-decoration:none;transition:opacity .2s,transform .2s;}
+.result-btn:hover{opacity:0.85;transform:translateY(-1px);}
+.result-btn.primary{background:var(--text);color:#fff;}
+.result-btn.secondary{background:var(--surface);color:var(--text-2);border:1px solid var(--border);}
+
+.btn-check{display:block;width:100%;margin-top:28px;padding:15px;background:var(--text);color:#fff;border:none;border-radius:100px;font-family:'Noto Sans JP',sans-serif;font-size:0.92rem;font-weight:600;letter-spacing:0.06em;cursor:pointer;transition:opacity .2s,transform .2s;}
+.btn-check:hover{opacity:0.82;transform:translateY(-1px);}
+.btn-reset{display:block;width:100%;margin-top:10px;padding:11px;background:transparent;color:var(--text-3);border:1px solid var(--border);border-radius:100px;font-family:'Noto Sans JP',sans-serif;font-size:0.82rem;cursor:pointer;transition:color .2s,border-color .2s;}
+.btn-reset:hover{color:var(--text);border-color:var(--text);}
+
+.notice{background:var(--surface2);border:1px solid var(--border);border-radius:11px;padding:16px 20px;font-size:0.8rem;color:var(--text-3);line-height:1.85;margin-top:28px;}
+.notice strong{color:var(--text-2);}
+
+/* SIDEBAR */
+.sidebar{position:sticky;top:80px;display:flex;flex-direction:column;gap:18px;}
+.sidebar-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px 18px;box-shadow:0 2px 8px var(--shadow);}
+.sidebar-card h3{font-family:'Noto Serif JP',serif;font-size:0.83rem;font-weight:600;color:var(--text);margin-bottom:13px;padding-bottom:9px;border-bottom:1px solid var(--border);}
+.nav-back{display:block;font-size:0.78rem;color:var(--text-3);text-decoration:none;padding:10px 0;transition:color .2s;}
+.nav-back:hover{color:var(--teal);}
+.related-list{display:flex;flex-direction:column;gap:12px;}
+.related-item{display:flex;gap:10px;text-decoration:none;color:inherit;align-items:flex-start;}
+.related-thumb{width:42px;height:42px;border-radius:8px;background:var(--teal-pale);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.related-title{font-size:0.76rem;color:var(--text-2);line-height:1.6;transition:color .2s;}
+.related-item:hover .related-title{color:var(--teal);}
+.switch-card{background:#deeaf5;border-radius:14px;padding:18px;text-align:center;text-decoration:none;color:inherit;display:block;transition:opacity .2s;}
+.switch-card:hover{opacity:0.85;}
+.switch-card .sw-icon{font-size:1.6rem;margin-bottom:6px;}
+.switch-card .sw-title{font-family:'Noto Serif JP',serif;font-size:0.85rem;font-weight:600;color:#1a3a5a;margin-bottom:4px;}
+.switch-card .sw-desc{font-size:0.73rem;color:#2a5a8a;line-height:1.6;}
+
+footer{padding:22px 32px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:auto;}
+.footer-copy{font-family:'IM Fell English',serif;font-size:0.75rem;color:var(--text-3);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{font-size:0.72rem;color:var(--text-3);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:var(--text);}
+.footer-disclaimer{width:100%;font-size:0.67rem;color:#b5afa8;line-height:1.8;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+.fi{opacity:0;transform:translateY(20px);transition:opacity .55s,transform .55s;}
+.fi.v{opacity:1;transform:none;}
+@media(max-width:860px){.layout{grid-template-columns:1fr;}.sidebar{display:none;}.header-nav{display:none;}header,footer,.breadcrumb{padding-left:20px;padding-right:20px;}.layout{padding:36px 20px 60px;}}
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo">Life Reset</a>
+  <nav class="header-nav">
+    <a href="index.html">ホーム</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="about.html">運営者情報</a>
+  </nav>
+</header>
+<div class="breadcrumb">
+  <a href="index.html">ホーム</a><span class="sep">›</span>
+  <a href="fukihara.html">不機嫌ハラスメント</a><span class="sep">›</span>
+  <span>チェックリスト — されている側</span>
+</div>
+
+<div class="layout">
+<main>
+  <div class="article-hero">
+    <div class="article-cat">🩺 診断する — されている側</div>
+    <h1 class="article-title">チェックリスト<br>あなたはフキハラを受けていますか？</h1>
+    <div class="article-meta">
+      <span>📖 所要時間 約3分</span>
+      <span>🔒 回答はこの端末のみ・送信されません</span>
+    </div>
+  </div>
+
+  <div class="lead fi">
+    「気のせいかな」「自分が敏感すぎるのかな」と思っていませんか？まず現状を客観的に確認してみましょう。当てはまる項目を選んで「結果を見る」を押してください。
+  </div>
+
+  <div class="fi" id="checklistForm">
+    <p class="check-intro">過去1〜3ヶ月の状況を思い浮かべながら、<strong>当てはまるものをすべて選んでください。</strong></p>
+
+    <div class="progress-wrap">
+      <div class="progress-header">
+        <span class="progress-label">チェック済み</span>
+        <span class="progress-count"><span id="countNum">0</span> / 15</span>
+      </div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressBar" style="width:0%"></div></div>
+    </div>
+
+    <!-- 感情・心理 -->
+    <div class="check-section-label">感情・心理への影響</div>
+    <div class="check-list">
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox" id="c1"><label for="c1">その人の機嫌を常に読みながら行動している</label>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox" id="c2"><label for="c2">「また怒らせてしまったのかも」と自責することが多い</label>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox" id="c3"><label for="c3">その人の顔色がいつも気になり、自分の言動を過度に制限している</label>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox" id="c4"><label for="c4">その人が近くにいるだけで体が緊張したり、息が詰まる感じがする</label>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox" id="c5"><label for="c5">「自分さえ我慢すれば丸く収まる」と感じて行動していることが多い</label>
+      </div>
+    </div>
+
+    <!-- 行動・状況 -->
+    <div class="check-section-label">具体的な行動・状況</div>
+    <div class="check-list">
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox" id="c6"><label for="c6">理由がわからないまま無視されたり、返事をもらえないことがある</label>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox" id="c7"><label for="c7">ため息・舌打ち・荒々しい物音などで不満を示されることがある</label>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox" id="c8"><label for="c8">急に態度が冷たくなり、理由を聞いても「別に」「なんでもない」と言われる</label>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox" id="c9"><label for="c9">その人が不機嫌になると、その場にいる全員の雰囲気が悪くなる</label>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox" id="c10"><label for="c10">謝罪や歩み寄りを自分だけが求められていると感じる</label>
+      </div>
+    </div>
+
+    <!-- 身体・生活 -->
+    <div class="check-section-label">身体・日常生活への影響</div>
+    <div class="check-list">
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox" id="c11"><label for="c11">その人と会う前日・当日の朝に、胃痛・頭痛・緊張感を感じることがある</label>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox" id="c12"><label for="c12">睡眠が浅くなったり、夜に「あのときどうすればよかったか」を考え続けることがある</label>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox" id="c13"><label for="c13">その人がいる職場・家・空間に入るのが憂鬱になっている</label>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox" id="c14"><label for="c14">食欲の変化・疲労感・集中力の低下など、体調への影響を感じている</label>
+      </div>
+      <div class="check-item" onclick="toggleCheck(this)">
+        <input type="checkbox" id="c15"><label for="c15">「もしかして私がおかしいのかも」と感じて、誰かに相談することをためらっている</label>
+      </div>
+    </div>
+
+    <button class="btn-check" onclick="showResult()">結果を見る</button>
+    <button class="btn-reset" onclick="resetCheck()">リセット</button>
+  </div>
+
+  <!-- RESULT -->
+  <div class="result-area fi" id="resultArea">
+
+    <div class="result-card low" id="resLow" style="display:none">
+      <div class="result-score" id="scoreLow"></div>
+      <div class="result-title">現時点では大きな影響は見られません</div>
+      <div class="result-desc">チェック数は少ない状態です。ただし「気になる項目があった」なら、早めに対処法を知っておくことが予防になります。フキハラの基礎知識を読んでおくと安心です。</div>
+      <div class="result-actions">
+        <a href="fukihara-what.html" class="result-btn primary">フキハラとは？を読む</a>
+        <a href="fukihara-check-doer.html" class="result-btn secondary">している側チェックも見る</a>
+      </div>
+    </div>
+
+    <div class="result-card mid" id="resMid" style="display:none">
+      <div class="result-score" id="scoreMid"></div>
+      <div class="result-title">フキハラの影響を受けている可能性があります</div>
+      <div class="result-desc">複数の項目に該当しています。「気のせいかも」と思っていた感覚には、正当な理由があるかもしれません。一人で抱え込まず、対処法を知り、信頼できる人への相談を検討してみてください。</div>
+      <div class="result-actions">
+        <a href="fukihara-howto.html" class="result-btn primary">対処法を読む →</a>
+        <a href="fukihara-faq.html" class="result-btn secondary">よくある質問を見る</a>
+      </div>
+    </div>
+
+    <div class="result-card high" id="resHigh" style="display:none">
+      <div class="result-score" id="scoreHigh"></div>
+      <div class="result-title">強い影響を受けている可能性があります</div>
+      <div class="result-desc">多くの項目に該当しています。心身への影響がすでに出ているかもしれません。これはあなたのせいではありません。専門家への相談や、安全な距離を取ることを真剣に検討してください。一人で解決しようとしなくて大丈夫です。</div>
+      <div class="result-actions">
+        <a href="fukihara-howto.html" class="result-btn primary">今すぐ対処法を読む →</a>
+        <a href="contact.html" class="result-btn secondary">相談・お問い合わせ</a>
+      </div>
+    </div>
+
+    <button class="btn-reset" onclick="resetCheck()" style="margin-top:16px;">もう一度チェックする</button>
+  </div>
+
+  <div class="notice fi">
+    <strong>このチェックリストについて：</strong>本チェックリストは一般的な情報提供を目的としており、医学的診断ではありません。深刻な影響を感じている場合は、心療内科・精神科・公認心理師への相談をお勧めします。回答データは送信・保存されません。
+  </div>
+
+</main>
+
+<aside class="sidebar">
+  <a href="fukihara.html" class="nav-back sidebar-card">← フキハラ トップに戻る</a>
+
+  <a href="fukihara-check-doer.html" class="switch-card">
+    <div class="sw-icon">🔍</div>
+    <div class="sw-title">している側のチェックも</div>
+    <div class="sw-desc">自分がフキハラをしていないか確認したい方はこちら</div>
+  </a>
+
+  <div class="sidebar-card">
+    <h3>📄 関連コンテンツ</h3>
+    <div class="related-list">
+      <a href="fukihara-what.html" class="related-item">
+        <div class="related-thumb">📖</div>
+        <div class="related-title">フキハラとは？</div>
+      </a>
+      <a href="fukihara-howto.html" class="related-item">
+        <div class="related-thumb">🛡️</div>
+        <div class="related-title">対処法・訴える</div>
+      </a>
+      <a href="fukihara-stories.html" class="related-item">
+        <div class="related-thumb">🗣️</div>
+        <div class="related-title">読者の体験談</div>
+      </a>
+    </div>
+  </div>
+</aside>
+</div>
+
+<footer>
+  <div class="footer-copy">© 2026 Life Reset</div>
+  <div class="footer-links">
+    <a href="index.html">ホーム</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="about.html">運営者情報</a>
+  </div>
+  <div class="footer-disclaimer">※本チェックリストは医学的診断ではありません。深刻な悩みは専門家にご相談ください。回答データは外部に送信されません。</div>
+</footer>
+
+<script>
+function toggleCheck(el){
+  const cb=el.querySelector('input[type=checkbox]');
+  cb.checked=!cb.checked;
+  el.classList.toggle('checked',cb.checked);
+  updateProgress();
+}
+function updateProgress(){
+  const total=15;
+  const checked=document.querySelectorAll('.check-item.checked').length;
+  document.getElementById('countNum').textContent=checked;
+  document.getElementById('progressBar').style.width=(checked/total*100)+'%';
+}
+function showResult(){
+  const score=document.querySelectorAll('.check-item.checked').length;
+  document.getElementById('checklistForm').style.display='none';
+  const ra=document.getElementById('resultArea');
+  ra.classList.add('show');
+  ra.style.opacity=0;ra.style.transform='translateY(20px)';
+  setTimeout(()=>{ra.style.transition='opacity .5s,transform .5s';ra.style.opacity=1;ra.style.transform='none';},10);
+  document.getElementById('resLow').style.display='none';
+  document.getElementById('resMid').style.display='none';
+  document.getElementById('resHigh').style.display='none';
+  const s=score+' / 15';
+  if(score<=4){document.getElementById('scoreLow').textContent=s;document.getElementById('resLow').style.display='block';}
+  else if(score<=9){document.getElementById('scoreMid').textContent=s;document.getElementById('resMid').style.display='block';}
+  else{document.getElementById('scoreHigh').textContent=s;document.getElementById('resHigh').style.display='block';}
+  ra.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function resetCheck(){
+  document.querySelectorAll('.check-item').forEach(el=>{el.classList.remove('checked');el.querySelector('input').checked=false;});
+  updateProgress();
+  document.getElementById('checklistForm').style.display='block';
+  document.getElementById('resultArea').classList.remove('show');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');obs.unobserve(x.target);}}),{threshold:0.06,rootMargin:'0px 0px -28px 0px'});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
