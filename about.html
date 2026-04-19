@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>運営者情報 | Life Reset</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f9f7f4;--surface:#ffffff;--surface2:#f2efea;--text:#111110;--text-2:#3d3b38;--text-3:#7a7570;--border:#ddd9d2;--shadow:rgba(20,18,15,0.07);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column;}
+header{padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);background:var(--bg);position:sticky;top:0;z-index:50;}
+.logo{font-family:'IM Fell English',serif;font-size:1.3rem;color:#111110;text-decoration:none;letter-spacing:0.02em;}
+.header-nav{display:flex;gap:28px;}
+.header-nav a{font-size:0.8rem;color:var(--text-3);text-decoration:none;letter-spacing:0.04em;transition:color .2s;}
+.header-nav a:hover,.header-nav a.active{color:var(--text);}
+.page-wrap{max-width:760px;margin:0 auto;padding:64px 24px 80px;flex:1;}
+.page-label{font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-3);margin-bottom:10px;}
+.page-title{font-family:'Noto Serif JP',serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:600;letter-spacing:0.04em;color:var(--text);margin-bottom:36px;padding-bottom:20px;border-bottom:1px solid var(--border);}
+
+/* INFO TABLE */
+.info-table{width:100%;border-collapse:collapse;margin-bottom:48px;}
+.info-table tr{border-bottom:1px solid var(--border);}
+.info-table th{
+  font-size:0.8rem;font-weight:500;color:var(--text-3);
+  text-align:left;padding:18px 16px 18px 0;
+  width:160px;vertical-align:top;letter-spacing:0.04em;
+  white-space:nowrap;
+}
+.info-table td{
+  font-size:0.87rem;color:var(--text-2);
+  padding:18px 0;line-height:1.9;
+}
+.info-table td a{color:var(--text);}
+
+.prose p{font-size:0.87rem;color:var(--text-2);line-height:2.1;margin-bottom:12px;}
+.prose h2{font-family:'Noto Serif JP',serif;font-size:1rem;font-weight:600;color:var(--text);margin:36px 0 10px;letter-spacing:0.04em;}
+
+footer{padding:22px 32px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:auto;}
+.footer-copy{font-family:'IM Fell English',serif;font-size:0.75rem;color:var(--text-3);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{font-size:0.72rem;color:var(--text-3);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:var(--text);}
+.footer-disclaimer{width:100%;font-size:0.67rem;color:#b5afa8;line-height:1.8;}
+@media(max-width:680px){.header-nav{display:none;}header,footer{padding-left:20px;padding-right:20px;}.page-wrap{padding:40px 20px 60px;}.info-table th{width:100px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">Life Reset</a>
+  <nav class="header-nav">
+    <a href="index.html">ホーム</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="about.html" class="active">運営者情報</a>
+  </nav>
+</header>
+
+<main class="page-wrap">
+  <p class="page-label">About</p>
+  <h1 class="page-title">運営者情報</h1>
+
+  <table class="info-table">
+    <tr>
+      <th>サイト名</th>
+      <td>Life Reset</td>
+    </tr>
+    <tr>
+      <th>サイトURL</th>
+      <td><a href="index.html">https://life-reset.com</a>（予定）</td>
+    </tr>
+    <tr>
+      <th>運営者名</th>
+      <td>リセットさん</td>
+    </tr>
+    <tr>
+      <th>運営開始</th>
+      <td>2026年4月</td>
+    </tr>
+    <tr>
+      <th>連絡先</th>
+      <td><a href="mailto:life.reset.reset@gmail.com">life.reset.reset@gmail.com</a></td>
+    </tr>
+  </table>
+
+  <div class="prose">
+    <h2>サイトの目的</h2>
+    <p>Life Reset は、不機嫌ハラスメント・オーバードーズ・ポルノ依存症など、現代社会における深い悩みを抱える方が、正確な情報と適切なサポートにアクセスできるよう運営している情報メディアです。</p>
+    <p>当サイトは医療・法律の専門家による診断・相談サービスではありません。深刻な問題は必ず専門家にご相談ください。</p>
+
+    <h2>掲載情報の方針</h2>
+    <p>掲載する情報は、信頼性の高い文献・公的機関の情報を参照し、できる限り正確を期しています。誤りを発見された場合は<a href="contact.html">お問い合わせ</a>よりご連絡ください。速やかに確認・修正いたします。</p>
+
+    <h2>アフィリエイト開示</h2>
+    <p>当サイトは、Amazon アソシエイト・その他アフィリエイトプログラムに参加しています。記事内のリンクを経由して商品を購入いただいた場合、当サイトに紹介料が発生することがあります。これはサイト運営・コンテンツ制作費に充てており、掲載内容の中立性・客観性には影響しません。</p>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-copy">© 2026 Life Reset</div>
+  <div class="footer-links">
+    <a href="index.html">ホーム</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="contact.html">お問い合わせ</a>
+    <a href="about.html">運営者情報</a>
+  </div>
+  <div class="footer-disclaimer">※本サイトの情報は一般的な情報提供を目的としており、医療・法律上のアドバイスではありません。深刻な悩みについては必ず専門家にご相談ください。</div>
+</footer>
+
+</body>
+</html>
